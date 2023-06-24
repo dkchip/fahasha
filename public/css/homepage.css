@@ -1,0 +1,231 @@
+/* Reset CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family:  sans-serif, Helvetica, Arial;
+    font-size: 1.6rem;
+}
+
+:root{
+    --text-black-color : #000;
+    --text-white-color : #fff;
+
+    --bgr-white-color : #ffff;
+}
+
+.width-content{
+    max-width: 100%;
+    width: 1250px;
+}
+
+
+.main{
+
+}
+
+
+/* Header CSS */
+.header{
+    min-width: 100%;
+    height: auto;
+}
+
+.header-top-banner{
+    display:flex;
+    justify-content: center;
+    background-color: #3e82c0;
+}
+
+.header-top-banner img{
+}
+
+.header-container{
+    width: 100%;
+    height: 70px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bgr-white-color);
+}
+.header-inner{
+    /* width: 100%; */
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #ccc; */
+}
+
+.header-inner-center{
+    margin: 0 22px;
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    
+
+}
+
+.search{
+    display: flex;
+        width: 100%;
+    border: 1px solid #ccc;
+    padding: 4px 14px;
+    border-radius: 8px;
+}
+
+.search input {
+    flex: 1 1 auto;
+    border: none;
+    outline: none;
+    padding-right: 8px;
+}
+
+.search-btn{
+    padding: 6px 26px;
+    font-size: 1.7rem;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: #c92127;
+}
+
+.search-btn i {
+    color: var(--text-white-color);
+}
+
+.header-inner-right{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.notification,
+.cart,
+.account {
+    text-align: center;
+    margin-left: 6px;
+}
+
+
+.notification i,
+.cart i,
+.account i {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.header-title{
+    font-size: 1.4rem;
+}
+
+.languages{
+    width: 70px;
+    height: 100%;
+    border: 1px solid #ccc;
+}
+
+/* Body CSS */
+
+.body{
+    padding-top: 30px;
+    background-color: #f0f0f0 ;
+    width: 100%;
+    height: 3000px;
+}
+
+.container{
+    margin: 0 auto;
+    padding: 0 18px;
+}
+
+.banner-main{
+    width: 100%;
+    display: flex;
+}
+
+.banner-left{
+    width: calc(100% - 400px);
+    height: 316px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border-radius: 10px;
+}
+
+.banner-list{
+    width: 200%;
+    height: 100%;
+    display: flex;
+    list-style-type: none;
+}
+
+.banner-item{
+    width: 50%;
+}
+
+.banner-item a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-item a img{
+    width: 100%;
+    height: 100%;
+}
+
+.banner-right{
+    width: 392px;
+    margin-left: 8px;
+}
+
+.banner-right-top,
+.banner-right-bottom{
+    border-radius: 10px;
+    overflow-x: hidden;
+}
+
+.banner-right-link{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-right-link img{
+    width: 100%;
+}
+
+.banner-right-bottom{
+    margin-top: 4px;
+}
+
+
+.home-banner{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.home-banner-inner{
+    width: 24%;
+}
+
+.home-banner-link{
+    flex: 1 1 auto;
+    display: inline;
+    width: 100%;
+    height: 100%;
+}
+
+.home-banner-link img{
+    width: 100%;
+}
