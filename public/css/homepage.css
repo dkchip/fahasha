@@ -27,6 +27,21 @@ body {
     width: 1250px;
 }
 
+@keyframes showElement{
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+
+}
+
+.animation-show{
+    animation: showElement 0.4s ease-out;
+}
+
+/*  */
 
 .main {}
 
@@ -287,9 +302,8 @@ body {
     font-size: 1.5rem;
 }
 
-
+/* Category CSS */
 .category {
-
     background-color: var(--bgr-white-color);
 }
 
@@ -332,18 +346,19 @@ body {
     color: var(--text-light-black-color);
 }
 
+/* Product css*/
 
-.textbook-combo {
+.div-propuct {
     background-color: var(--bgr-white-color);
 }
 
-.textbook-menu {
+.div-product-menu {
     padding: 10px 12px;
     display: flex;
     border-bottom: 0.5px solid #eae8e8;
 }
 
-.textbook-menu-item {
+.div-product-menu-item {
     margin-right: 6px;
     padding: 8px 6px;
     border: 1px solid transparent;
@@ -352,19 +367,19 @@ body {
     caret-color: transparent;
 }
 
-.textbook-content {
+.div-product-content {
     padding: 4px;
     width: 100%;
     overflow: hidden;
 
 }
 
-.textbook-product-list {
+.div-product-list {
     width: 200%;
     display: flex;
 }
 
-.textbook-product-item {
+.div-product-item {
     width: 233px;;
     padding: 4px;
     margin: 0 4px;
@@ -373,15 +388,20 @@ body {
 
 }
 
-.textbook-img {
+.div-product-item a {
+    text-decoration: none;
+    color: var(--text-black-color);
+}
+
+.product-img {
     width: 80%;
     display: block;
     margin: auto;
 }
 
-.textbook-info {}
+.product-info {}
 
-.textbook-title {
+.product-title {
     margin-top: 6px;
     font-size: 1.4rem;
     display: -webkit-box;
@@ -392,20 +412,20 @@ body {
     word-break: break-word;
 }
 
-.textbook-discount-price{
+.product-discount-price{
     
     display: flex;
     align-items: center;
     margin: 8px 0;
 }
 
-.textbook-discount-price span{
+.product-discount-price span{
     color: #c92127;
     font-weight: 600;
     font-size: 1.8rem;
 }
 
-.percent-discount{
+.product-percent-discount{
     margin-left: 10px;
     padding: 3px 4px;
     background-color: #c92127;
@@ -415,12 +435,12 @@ body {
     font-weight: 600;
 }
 
-.original-price{
+.product-original-price{
     text-decoration: line-through;
     color: var(--text-light-black-color);
 }
 
-.textbook-more{
+.div-product-more{
     width: 100%;
     border-top: 0.5px solid #eae8e8;
     display: flex;
