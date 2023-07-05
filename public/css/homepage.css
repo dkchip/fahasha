@@ -1,175 +1,5 @@
-/* Reset CSS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    font-size: 62.5%;
-}
-
-body {
-    font-family: sans-serif, Helvetica, Arial;
-    font-size: 1.6rem;
-}
-
-:root {
-    --text-black-color: rgb(0, 0, 0);
-    --text-white-color: rgb(255, 255, 255);
-    --text-light-black-color: rgb(104, 114, 124);
-
-    --bgr-white-color: #ffff;
-}
-
-.width-content {
-    max-width: 100%;
-    width: 1250px;
-}
-
-@keyframes showElement{
-    0% {
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-
-}
-
-.animation-show{
-    animation: showElement 0.4s ease-out;
-}
-
-/*  */
-
-.main {}
-
-.mgt-20 {
-    margin-top: 20px;
-}
-
-.active {
-    color: #F7931E;
-    font-weight: bold;
-    border-color: #F7931E !important;
-}
-
-
-
-
-
-/* Header CSS */
-.header {
-    min-width: 100%;
-    height: auto;
-}
-
-.header-top-banner {
-    display: flex;
-    justify-content: center;
-    background-color: #3e82c0;
-}
-
-.header-top-banner img {}
-
-.header-container {
-    width: 100%;
-    height: 70px;
-    padding: 0 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--bgr-white-color);
-}
-
-.header-inner {
-    /* width: 100%; */
-    height: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* background-color: #ccc; */
-}
-
-.header-inner-center {
-    margin: 0 22px;
-    display: flex;
-    align-items: center;
-    flex: 1 1 auto;
-
-
-}
-
-.search {
-    display: flex;
-    width: 100%;
-    border: 1px solid #ccc;
-    padding: 4px 14px;
-    border-radius: 8px;
-}
-
-.search input {
-    flex: 1 1 auto;
-    border: none;
-    outline: none;
-    padding-right: 8px;
-}
-
-.search-btn {
-    padding: 6px 26px;
-    font-size: 1.7rem;
-    border-radius: 8px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    background-color: #c92127;
-}
-
-.search-btn i {
-    color: var(--text-white-color);
-}
-
-.header-inner-right {
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
-.notification,
-.cart,
-.account {
-    text-align: center;
-    margin-left: 6px;
-}
-
-
-.notification i,
-.cart i,
-.account i {
-    display: block;
-    margin-bottom: 4px;
-}
-
-.header-title {
-    font-size: 1.4rem;
-}
-
-.languages {
-    width: 70px;
-    height: 100%;
-    border: 1px solid #ccc;
-}
-
-/* Body CSS */
-
-.body {
-    padding-top: 30px;
-    background-color: #f0f0f0;
-    width: 100%;
-    height: 3000px;
-}
-
+/* Css nội dung cho trang homepage (trang chủ) */
+/* Content CSS */
 .container {
     margin: 0 auto;
     padding: 0 18px;
@@ -380,7 +210,8 @@ body {
 }
 
 .div-product-item {
-    width: 233px;;
+    width: 233px;
+    ;
     padding: 4px;
     margin: 0 4px;
     border: 0.5px solid #eae8e8;
@@ -412,20 +243,20 @@ body {
     word-break: break-word;
 }
 
-.product-discount-price{
-    
+.product-discount-price {
+
     display: flex;
     align-items: center;
     margin: 8px 0;
 }
 
-.product-discount-price span{
+.product-discount-price span {
     color: #c92127;
     font-weight: 600;
     font-size: 1.8rem;
 }
 
-.product-percent-discount{
+.product-percent-discount {
     margin-left: 10px;
     padding: 3px 4px;
     background-color: #c92127;
@@ -435,12 +266,12 @@ body {
     font-weight: 600;
 }
 
-.product-original-price{
+.product-original-price {
     text-decoration: line-through;
     color: var(--text-light-black-color);
 }
 
-.div-product-more{
+.div-product-more {
     width: 100%;
     border-top: 0.5px solid #eae8e8;
     display: flex;
@@ -449,7 +280,7 @@ body {
     padding: 10px 0;
 }
 
-.more-btn{
+.more-btn {
     color: #c92127;
     border: 1.5px solid #c92127;
     background-color: transparent;
@@ -459,6 +290,7 @@ body {
     cursor: pointer;
 }
 
-.more-btn:hover{
+.more-btn:hover {
     background-color: #faf6f7;
 }
+
