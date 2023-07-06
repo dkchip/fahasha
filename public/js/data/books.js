@@ -7,9 +7,9 @@ export const dataTextbooks = [
         price: 193000,
         discount_precent: 2,
         supplier: "",
-        age: 123,
-        school_level: 3,
-        grade: 12,
+        age: 6,
+        school_level: 1,
+        grade: 1,
     },
     {
         id: 2,
@@ -68,7 +68,7 @@ export const dataTextbooks = [
         discount_precent: 4,
         supplier: "",
         age: 8,
-        school_level: 1,
+        school_level: 2,
         grade: 3,
     },
-    ];
+];

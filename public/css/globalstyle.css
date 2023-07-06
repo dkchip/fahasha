@@ -1,0 +1,58 @@
+/* Css global tức tất cả các trang đều dùng ,
+    cứ tạo ra trang html nào là đều phải link file này vào,
+    bao gồm reset css các thẻ + các class css sẵn 
+*/
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: sans-serif, Helvetica, Arial;
+    font-size: 1.6rem;
+}
+
+:root {
+    --text-black-color: rgb(0, 0, 0);
+    --text-white-color: rgb(255, 255, 255);
+    --text-light-black-color: rgb(104, 114, 124);
+
+    --bgr-white-color: #ffff;
+}
+
+.width-content {
+    max-width: 100%;
+    width: 1250px;
+}
+
+@keyframes showElement {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+.animation-show {
+    animation: showElement 0.4s ease-out;
+}
+
+.mgt-20 {
+    margin-top: 20px;
+}
+
+.active {
+    color: #F7931E;
+    font-weight: bold;
+    border-color: #F7931E !important;
+}
