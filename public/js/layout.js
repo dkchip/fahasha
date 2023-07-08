@@ -1,4 +1,6 @@
 import { dataCategory } from "./data/category.js";
+import dataProductAll from "./data/dataProductAll.js";
+
 
 const $$ = (el) => {
     return document.querySelector(el);
@@ -11,10 +13,16 @@ const $$ = (el) => {
 
 // Get element
 const navLinkEl = $$(".nav-links");
+const menuHeaderEl = $$(".menu");
 
-const menuCategoryHeadingEl = $$(".menu-category-heading")
-const menuCategoryRowEl = $$(".menu-category-row")
+const menuCategoryHeadingEl = $$(".menu-category-heading");
+const menuCategoryRowEl = $$(".menu-category-row");
 
+const searchInputEl = $$(".search input");
+const searchResults = $$(".search-result-wrapper");
+const searchResultListEl = $$(".search-result-list");
+
+const featuredCategoryEl = $$(".featured-category-list")  
 
 
 
@@ -29,7 +37,7 @@ navLinkEl.innerHTML = htmlNavLink.join("");
 
 
 // Handle Render Data Menu Category When Hover
-function handleRenderData (el){
+const handleRenderData = (el) =>{
   dataCategory.forEach((item) => {
     let html = "";
     let htmlHeading = "";
@@ -70,3 +78,83 @@ navLinkListEl.forEach((el) => {
 handleRenderData(dataCategory[0].id.toString())
 
 
+// Show - Hide search results
+searchInputEl.addEventListener("click", () => {
+  searchResults.classList.add("show")
+})
+
+searchInputEl.addEventListener("focusout", () => {
+  searchResults.classList.remove("show")
+})
+
+menuHeaderEl.addEventListener('mouseover',() => {
+  searchResults.classList.remove("show");
+
+})
+
+// Render featured category list link elment
+const renderFeatureCategory =  () => {
+  let html = '';
+  html = dataCategory.map((el,index) => { 
+    return (
+      `
+      <a key=${index} class="featured-category-item" href="">
+        <img src=${el.image} alt=${el.title}>
+        <span>${el.title}</span>
+      </a>
+      `
+    )
+  })
+
+  featuredCategoryEl.innerHTML = html.join('');
+}
+
+renderFeatureCategory();
+
+// Render results item
+
+const debounce = (fn, delay = 1000) => {
+  let timerId = null;
+  return (...args) => {
+      clearTimeout(timerId);
+      timerId = setTimeout(() => fn(...args), delay);
+  };
+};
+
+const renderSeachResults = (value) => {
+  let results = []
+  let htmlProduct = ''
+  if(value == ''){
+    searchResultListEl.innerHTML = ''
+  }else{
+    results = dataProductAll.filter((el) => {
+      if(el.title.toLowerCase().includes(value.toLowerCase())) {
+        return el
+      }
+    })
+  
+    htmlProduct = results.slice(0,6).map((product,index) => {
+      return (
+        ` <a key = ${index} class="search-result-item" href="">
+            <img src=${product.image}>
+            <span>${product.title}</span>
+          </a>
+        `
+      )
+    })
+    searchResultListEl.innerHTML = htmlProduct.join('')
+  }
+
+  
+}
+
+const onInput = debounce(renderSeachResults, 500);
+
+searchInputEl.addEventListener('input',(e) => {
+    let value = e.target.value;
+    if(value.startsWith(" ")){
+      searchInputEl.value = "";
+    }else{
+      onInput(value.trim())
+    }
+})

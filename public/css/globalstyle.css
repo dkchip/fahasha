@@ -56,3 +56,11 @@ body {
     font-weight: bold;
     border-color: #F7931E !important;
 }
+
+.show{
+    display: initial !important;
+}
+
+.hide{
+    display: none !important;
+}
