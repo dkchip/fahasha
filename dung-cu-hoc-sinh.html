@@ -22,7 +22,7 @@
                 <div class="header-inner width-content">
                     <div class="header-inner-left">
                         <a href="./index.html">
-                            <img src="../public/imgs/fahasa_logo.png" alt="">
+                            <img src="./public//imgs/fahasa_logo.png" alt="">
                         </a>
                     </div>
                     <div class="header-inner-center">
@@ -55,13 +55,11 @@
                             <div class="search-result-wrapper">
                                 <div class="search-result">
                                     <div class="result-heading">
+                                        <i class="fa-solid fa-arrow-trend-up"></i>
                                         <h4>Sản phẩm</h4>
                                     </div>
                                     <div class="search-result-list">
-                                        <a class="search-result-item" href="">
-                                            <img src="./public/imgs/books/sach-bai-tap-1.jpg" alt="">
-                                            <span>Sách bài tập </span>
-                                        </a>
+                                        
                                     </div>
                                 </div>
                                 <div class="featured-category-wrapper">
@@ -87,14 +85,21 @@
                             <span class="header-title">Thông báo</span>
                         </div>
                         <div class="cart">
-                            <i class="fa-solid fa-cart-shopping" style="color: #293a57;"></i>
-                            <span class="header-title">Giỏ hàng</span>
+                            <a href="./cart.html">
+                                <i class="fa-solid fa-cart-shopping" style="color: #293a57;"></i>
+                                <span class="header-title">Giỏ hàng</span>
+                           </a>
                         </div>
                         <div class="account">
                             <i class="fa-regular fa-user"></i>
                             <span class="header-title">Tài khoản</span>
+                            <div class="account-dropdown">
+                                <a href="login.html" class="link-login">Đăng nhập</a>
+                                <a href="register.html" class="link-register">Đăng ký</a>
+                            </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </header>
@@ -104,7 +109,7 @@
                 <div class="breadcrumbs">
                     <a href="">Home</a>
                     <span>></span>
-                    <a href="./pages/all-category.html">Tất Cả Nhóm Sản Phẩm</a>
+                    <a href="./all-category.html">Tất Cả Nhóm Sản Phẩm</a>
                     <span>></span>
                     <a href="">Dụng Cụ Học Sinh</a>
                 </div>
@@ -115,7 +120,7 @@
                                 <h4 class="row-heading">Nhóm Sản Phẩm</h4>
                                 <div class="sidebar-left-nav">
                                     <p class="">
-                                        <a href="./pages/all-category.html?type=all" style="text-decoration: none;color: black;">Tất cả sản phẩm</a>
+                                        <a href="./all-category.html?type=all" style="text-decoration: none;color: black;">Tất cả sản phẩm</a>
                                     </p>
                                     <div class="sidebar-left-links">
                                         <a  href="./sach-trong-nuoc.html?type=domestic">Sách Trong Nước</a>
@@ -150,46 +155,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="sidebar-left-row ">
-                                <h4 class="row-heading">Nơi Gia Công & Sản Xuất</h4>
-                                <div class="row-even row-even-production-site">
-                                    <div class="row-option">
-                                        <input onclick="test(this,0,150000)" value="ac" type="checkbox">
-                                        <label >Việt Nam</label>
-                                    </div>
-                                    <div class="row-option">
-                                        <input onclick="test(this,150000,300000)" type="checkbox">
-                                        <label for="">Trung Quốc</label>
-                                    </div>
-        
-                                </div>
-                            </div>
-                            <div class="sidebar-left-row ">
-                                <h4 class="row-heading">Cấp Học</h4>
-                                <div class="row-even row-even-school-level">
-                                    <div class="row-option ">
-                                        <input onclick="test(this,0,150000)" value="ac" type="checkbox">
-                                        <label >Mầm Non</label>
-                                    </div>
-                                    <div class="row-option">
-                                        <input onclick="test(this,150000,300000)" type="checkbox">
-                                        <label for="">Cấp 1</label>
-                                    </div>
-                                    <div class="row-option">
-                                        <input onclick="test(this,0,150000)" value="ac" type="checkbox">
-                                        <label >Cấp 2</label>
-                                    </div>
-                                    <div class="row-option">
-                                        <input onclick="test(this,150000,300000)" type="checkbox">
-                                        <label for="">Cấp 3</label>
-                                    </div>
-
-        
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                     <div class="content">
+                        <span></span>
                         <div class="list-product">
 
                         </div>
@@ -315,7 +284,6 @@
             </div>
         </footer>
     </div>
-    <script type="module" src="./public/js/homepage.js" ></script>
    
 
 </body>

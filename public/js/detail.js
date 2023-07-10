@@ -4,31 +4,25 @@ const $$ = (el) => {
     return document.querySelector(el);
   };
   
-const $$$ = (el) => {
-return document.querySelectorAll(el);
-};
-  
-
-
-
+const status = JSON.parse(localStorage.getItem("logind")).status
 // Get Element
 
 const containerDetailEl = $$(".container-detail")
+
+let count = 1;
 
 // get  Params
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const id = urlParams.get('id');
+let dataProduct = {};
 
 const renderHtmlProduct = (id) => {
-    let dataProduct = {};
     dataProductAll.forEach((el) => {
         if(el.id.toString() == id){
-            console.log(el)
             dataProduct = el
         }
     })
-    console.log(dataProduct.supplier)
     let html = `
         <div class="product-detail-wrap">
             <div class="product-detail">
@@ -61,9 +55,9 @@ const renderHtmlProduct = (id) => {
                     <div class="product-quantity">
                         <span>Số lượng :</span>
                         <div>
-                            <i class="fa-solid fa-plus"></i>
-                            <span class="product-count">4</span>
-                            <i class="fa-solid fa-minus"></i>
+                        <i class="fa-solid fa-minus icon-minus"></i>
+                        <span class="product-count">${count}</span>
+                        <i class="fa-solid fa-plus icon-plus"></i>
                         </div>
                     </div>
                 </div>
@@ -134,3 +128,67 @@ const renderHtmlProduct = (id) => {
 
 renderHtmlProduct(id);
 
+const iconMinusEl = $$(".icon-minus")
+const iconPlusEl = $$(".icon-plus")
+const btnAddCartEl = $$(".btn-cart")
+iconMinusEl.addEventListener("click",() =>{
+    if(count !== 1){
+        const productCountEl = $$(".product-count");
+        count --;
+        productCountEl.innerHTML = count
+   
+    }
+
+})
+
+iconPlusEl.addEventListener("click",() =>{
+    const productCountEl = $$(".product-count");
+    count ++;
+    productCountEl.innerHTML = count
+
+})
+
+
+btnAddCartEl.addEventListener('click',(e) => {
+    if(!status){
+        e.preventDefault()
+        alert("Đăng nhập để sử dụng chức năng này")
+    }else{
+        e.preventDefault()
+        
+        const logind = JSON.parse(localStorage.getItem("logind"))
+        const usersInfo = JSON.parse(localStorage.getItem("usersInfo"))
+
+        let indexUser = usersInfo.findIndex(user => user.id === logind.dataUser.id)
+        let dataCart = {}
+        let indexProduct = logind.dataUser.cart.findIndex((item) => {
+            return item.product_id == dataProduct.id
+            })
+
+
+        if(indexProduct === -1){
+            dataCart.product_id = dataProduct.id;
+            dataCart.title = dataProduct.title;
+            dataCart.price = dataProduct.price;
+            dataCart.discount_precent = dataProduct.discount_precent;
+            dataCart.count = count;
+            dataCart.image = dataProduct.image
+            
+            logind.dataUser.cart.push(dataCart);
+            usersInfo[indexUser].cart.push(dataCart);
+
+            localStorage.setItem("logind",JSON.stringify(logind));
+            localStorage.setItem("usersInfo",JSON.stringify(usersInfo));
+            
+        }else{
+        
+            logind.dataUser.cart[indexProduct].count += count;
+            usersInfo[indexUser].cart = logind.dataUser.cart;
+
+            localStorage.setItem("logind",JSON.stringify(logind));
+            localStorage.setItem("usersInfo",JSON.stringify(usersInfo));
+
+        }
+        window.location = "/cart.html"
+    }
+})

@@ -3,14 +3,14 @@ import dataProductAll from "./data/dataProductAll.js";
 
 
 const $$ = (el) => {
-    return document.querySelector(el);
-  };
-  
-  const $$$ = (el) => {
-    return document.querySelectorAll(el);
-  };
-  
+  return document.querySelector(el);
+};
 
+const $$$ = (el) => {
+  return document.querySelectorAll(el);
+};
+
+let logind = JSON.parse(localStorage.getItem("logind"));
 // Get element
 const navLinkEl = $$(".nav-links");
 const menuHeaderEl = $$(".menu");
@@ -22,12 +22,32 @@ const searchInputEl = $$(".search input");
 const searchResults = $$(".search-result-wrapper");
 const searchResultListEl = $$(".search-result-list");
 
-const featuredCategoryEl = $$(".featured-category-list")  
-
-
+const featuredCategoryEl = $$(".featured-category-list") 
+const accountDropdownEl = $$(".account-dropdown"); 
+const headerTitleEl = $$(".account>.header-title");
+const searchBtnEl = $$(".search-btn");
 
 // Render nav link
 let htmlNavLink = "";
+
+
+// handle search\
+
+const handeleSeach = () => {
+  const searchValue = $$(".search>input").value;
+  window.location = `/all-category.html?type=all&search=${searchValue}`
+}
+
+ $$(".search>input").addEventListener("keydown", (e) => {
+  if(e.key === "Enter"){
+    handeleSeach()
+  }
+});
+
+searchBtnEl.addEventListener("click", () =>{
+  handeleSeach()
+  
+})
 
 htmlNavLink = dataCategory.map((el,i) => {
     return `<a id-data = ${el.id} href=${el.path}> ${el.title}</a>`
@@ -164,7 +184,34 @@ searchInputEl.addEventListener('input',(e) => {
     if(value.startsWith(" ")){
       searchInputEl.value = "";
     }else{
-      console.log(value)
       onInput(value.trim())
     }
 })
+
+if(logind.status){
+  headerTitleEl.innerHTML = logind.dataUser.name
+
+  accountDropdownEl.innerHTML = `    
+  <a href="/cart.html" class="link-cart">Đơn hàng của tôi</a>
+  <a  class="link-logout">Đăng Xuất</a>
+            `
+ 
+}else{
+  headerTitleEl.innerText = "Tài khoản"
+  accountDropdownEl.innerHTML = `    
+                    <a href="login.html" class="link-login">Đăng nhập</a>
+                    <a href="register.html" class="link-register">Đăng ký</a
+            `
+}
+
+const btnLogoutEl = $$(".link-logout")
+if(btnLogoutEl){
+  btnLogoutEl.addEventListener("click", () =>{
+    logind.status = false;
+    logind.dataUser = {}
+    localStorage.setItem("logind",JSON.stringify(logind))
+    window.location = "/index.html"
+  })
+
+}
+

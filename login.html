@@ -83,8 +83,10 @@
                             <span class="header-title">Thông báo</span>
                         </div>
                         <div class="cart">
-                            <i class="fa-solid fa-cart-shopping" style="color: #293a57;"></i>
-                            <span class="header-title">Giỏ hàng</span>
+                            <a href="./cart.html">
+                                <i class="fa-solid fa-cart-shopping" style="color: #293a57;"></i>
+                                <span class="header-title">Giỏ hàng</span>
+                           </a>
                         </div>
                         <div class="account">
                             <i class="fa-regular fa-user"></i>
@@ -109,11 +111,11 @@
                         </div>
                         <div class="form-row">
                             <label for="username">Số điện thoại/Email</label><br>
-                            <input id="username" type="text" name="username"> <br>
+                            <input id="username" class="input-email" type="text" name="username"> <br>
                         </div>
                         <div class="form-row">
                             <label for="password">Mật khẩu</label><br>
-                            <input id="password" type="password" name="password"> <br>
+                            <input id="password" class="input-password" type="password" name="password"> <br>
                         </div>
                         <div class="form-row">
                             <span></span>
@@ -245,7 +247,7 @@
         </footer>
     </div>
 
-    <script type="module" src="./public/js/homepage.js" ></script>
+    <script type="module" src="./public/js/login.js" ></script>
 
 </body>
 </html>

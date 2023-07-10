@@ -10,12 +10,14 @@ return document.querySelectorAll(el);
 // Get Element 
 
 const btnSubmitEl = $$(".btnsubmit")
+const inputEl = $$$(".form-row>input")
+
 
 // handle register
 
 const handleRegister = async (email,password,rePassword,userName) => {
     let emailCheck = false;
-    let dataUsers = JSON.parse(localStorage.getItem('arrUser'));
+    let dataUsers = JSON.parse(localStorage.getItem('accounts'));
     let dataUsersInfos = JSON.parse(localStorage.getItem("usersInfo"))
     dataUsers.forEach((el) => {
         if(el.email ===email) emailCheck = true
@@ -26,8 +28,6 @@ const handleRegister = async (email,password,rePassword,userName) => {
         return 0
     }else{
         if(password === rePassword){
-            localStorage.removeItem("arrUser")
-            localStorage.removeItem("usersInfo")
             let newId = dataUsers[dataUsers.length -1].id + 1;
             dataUsers.push({
                 "id" : newId,
@@ -44,11 +44,10 @@ const handleRegister = async (email,password,rePassword,userName) => {
                 }
             )
 
-                console.log(dataUsersInfos)
-            localStorage.setItem('arrUser',JSON.stringify(dataUsers))
+            localStorage.setItem('accounts',JSON.stringify(dataUsers))
             localStorage.setItem("usersInfo", JSON.stringify(dataUsersInfos))
-
             alert("Đăng kí thành công");
+            window.location = "/login.html"
             
             
         }else{
@@ -72,25 +71,19 @@ btnSubmitEl.addEventListener("click", () => {
 })
 
 
-// let user = [
-//     {
-//         "id" : 1,
-//         "name" : "hoang viet",
-//         "cart" : [
-//         ]
-//     }
-// ]
-// localStorage.setItem("usersInfo", JSON.stringify(user))
-// localStorage.removeItem("userInfos")
+inputEl.forEach((el) => {
+    el.addEventListener("keydown",(e) => {
+      if(e.key === "Enter"){
+        const valueEmail = $$(".input-email").value
+        const valuePassword = $$(".input-password").value
+        const valueRePassword = $$(".input-re-password").value
+        const valueUsername = $$(".input-username").value
 
-
-// let account = [
-//     {
-//         "id" : 1,
-//         "email" : "admin@gmail.com",
-//         "password" : 123123
-//     }
-// ]
-
-// localStorage.setItem("arrUser", JSON.stringify(account))
-// localStorage.removeItem("userInfos")
+        if(valueEmail.trim() == "" || valuePassword.trim() == "" || valueRePassword.trim() == "" || valueUsername.trim() == "" ){
+            alert("Không được để trống")
+        }else{
+            handleRegister(valueEmail,valuePassword,valueRePassword,valueUsername)
+        }
+        }
+    })
+  })

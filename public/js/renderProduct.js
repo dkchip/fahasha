@@ -7,22 +7,25 @@ import { dataToys } from "./data/toys.js";
 const $$ = (el) => {
     return document.querySelector(el);
   };
-  
+
 const $$$ = (el) => {
-return document.querySelectorAll(el);
-};
+    return document.querySelectorAll(el);
+    
+}
+  
 
 
 // Get Element 
 
 const listProductEl = $$('.list-product');
-const ListEl = document.querySelectorAll(".row-option input");
-
+const ListEl = $$$(".row-option input");
+const spanEl = $$(".content>span");
 
 const url = new URL(window.location.href);
 let type = url.searchParams.get("type")
+let search = url.searchParams.get("search")
 
-const renderProduct = (param,type) => {
+const renderProduct = (param,type,search) => {
     let html = '';
     let tempData = dataProductAll;
     let newProduct = [];
@@ -47,15 +50,28 @@ const renderProduct = (param,type) => {
             tempData = dataProductAll;
 
     }
-    if(param){
+
+    if(search){
+        spanEl.innerText = `Kết quả tìm kiếm từ khóa : ${search}`
         newProduct = tempData.filter((el) => {
-            if(el.price >= Number.parseInt(param[0]) && el.price <= Number.parseInt(param[1])){
-                return el;
+            if(el.title.toLowerCase().includes(search)){
+                return el
             }
         })
     }else{
-        newProduct = tempData;
+        spanEl.innerHTML = '';
+         if(param){
+             newProduct = tempData.filter((el) => {
+                 if(el.price >= Number.parseInt(param[0]) && el.price <= Number.parseInt(param[1])){
+                         return el;
+                     
+                 }
+             })
+         }else{
+             newProduct = tempData;
+         }
     }
+
     html = newProduct.slice(0,24).map((el,index) => {
         return `
             <div class="product-item">
@@ -79,7 +95,7 @@ const renderProduct = (param,type) => {
     }
 }
 
-renderProduct(null,type);
+renderProduct(null,type,search);
 
 
 
@@ -92,6 +108,6 @@ ListEl.forEach((el) => {
         }else{
             param === null
         }
-        renderProduct(param,type)
+        renderProduct(param,type,null)
     })
 })

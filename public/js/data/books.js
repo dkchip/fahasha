@@ -127,6 +127,7 @@ export const dataTextbooks = [
     },
     {
         id: 7,
+        product_code: 9781974714803,
         image: "./public/imgs/books/sach-giao-khoa-7.jpg",
         title:
         "Sách Giáo Khoa Bộ Lớp 7 - Chân Trời Sáng Tạo - Sách Bài Học (Bộ 12 Cuốn) (2023) (Không Tin Học)",
@@ -147,6 +148,7 @@ export const dataTextbooks = [
     },
     {
         id: 8,
+        product_code: 9781974714803,
         image: "./public/imgs/books/sach-bai-tap-toan-7.jpg",
         title:
         "Bài Tập Toán Cơ Bản Và Nâng Cao 7 - Tập 1 (Theo Chương Trình Giáo Dục Phổ Thông)",
@@ -167,6 +169,7 @@ export const dataTextbooks = [
     },
     {
         id: 9,
+        product_code: 9781974714803,
         image: "./public/imgs/books/sach-bai-tap-tienganh-7.jpg",
         title:
         "Tiếng Anh 7 - Tập 1 - Sách Bài Tập (2021)",
@@ -187,6 +190,7 @@ export const dataTextbooks = [
     },
     {
         id: 10,
+        product_code: 9781974714803,
         image: "./public/imgs/books/tienganh-7-think.jpg",
         title:
         "Tiếng Anh 7 Think - Workbook",
@@ -207,6 +211,7 @@ export const dataTextbooks = [
     },
     {
         id: 11,
+        product_code: 9781974714803,
         image: "./public/imgs/books/combo-tienganh-10.jpg",
         title:
         "Combo Sách Tiếng Anh 10 - English Discovery: Student's Book + Workbook (Bộ 2 Cuốn)",
@@ -227,6 +232,7 @@ export const dataTextbooks = [
     },
     {
         id: 12,
+        product_code: 9781974714803,
         image: "./public/imgs/books/sach-bai-tap-tin-10.jpg",
         title:
         "Bài Tập Tin Học 10 (Kết Nối) (2023)",
@@ -247,6 +253,7 @@ export const dataTextbooks = [
     },
     {
         id: 13,
+        product_code: 9781974714803,
         image: "./public/imgs/books/sach-am-nhac-10.jpg",
         title:
         "Âm Nhạc 10 (Chân Trời Sáng Tạo) (2023)",
@@ -267,6 +274,7 @@ export const dataTextbooks = [
     },
     {
         id: 14,
+        product_code: 9781974714803,
         image: "./public/imgs/books/tap-ban-do-diali-12.jpg",
         title:
         "Tập Bản Đồ Địa Lí 12 (2022)",
@@ -287,6 +295,7 @@ export const dataTextbooks = [
     },
     {
         id: 15,
+        product_code: 9781974714803,
         image: "./public/imgs/books/sach-vat-li-12.jpg",
         title:
         "Vật Lí 12 (Song Ngữ Việt - Anh)",
@@ -316,7 +325,7 @@ export const dataForeignBooks = [
         "Jujutsu Kaisen 4 (English Edition)",
         price: 225000,
         description : "To gain the power he needs to save his friend from a cursed spirit, Yuji Itadori swallows a piece of a demon, only to find himself caught in the midst of a horrific war of the supernatural! While investigating a strange set of mysterious deaths, Itadori meets Junpei, a troubled kid who is often bullied at school. However, Junpei is also befriended by the culprit behind the bloody incident—Mahito, a mischievous cursed spirit! Mahito sets in motion a devious plan involving Junpei, hoping to ensnare Itadori as well.",
-        discount_precent: null,
+        discount_precent: 3,
         language : "Tiếng Anh",
         supplier: "Diamond Book Distributors",
         author : "Gege Akutami",
@@ -330,13 +339,13 @@ export const dataForeignBooks = [
     },
     {
         id: 301,
-        product_code:	9781974714810,
+        product_code:9781974714810,
         image: "./public/imgs/foreignBooks/jusutsu-1.jpg",
         title:
         "Jujutsu Kaisen 1 (English Edition)",
         price: 225000,
         description : "To gain the power he needs to save his friend from a cursed spirit, Yuji Itadori swallows a piece of a demon, only to find himself caught in the midst of a horrific war of the supernatural! While investigating a strange set of mysterious deaths, Itadori meets Junpei, a troubled kid who is often bullied at school. However, Junpei is also befriended by the culprit behind the bloody incident—Mahito, a mischievous cursed spirit! Mahito sets in motion a devious plan involving Junpei, hoping to ensnare Itadori as well.",
-        discount_precent: null,
+        discount_precent: 4,
         language : "Tiếng Anh",
         supplier: "Diamond Book Distributors",
         author : "Gege Akutami",
@@ -356,7 +365,7 @@ export const dataForeignBooks = [
         "Jujutsu Kaisen 3 (English Edition)",
         price: 225000,
         description : "To gain the power he needs to save his friend from a cursed spirit, Yuji Itadori swallows a piece of a demon, only to find himself caught in the midst of a horrific war of the supernatural! While investigating a strange set of mysterious deaths, Itadori meets Junpei, a troubled kid who is often bullied at school. However, Junpei is also befriended by the culprit behind the bloody incident—Mahito, a mischievous cursed spirit! Mahito sets in motion a devious plan involving Junpei, hoping to ensnare Itadori as well.",
-        discount_precent: null,
+        discount_precent: 5,
         language : "Tiếng Anh",
         supplier: "Diamond Book Distributors",
         author : "Gege Akutami",
@@ -376,7 +385,7 @@ export const dataForeignBooks = [
         "Jujutsu Kaisen 5 (English Edition)",
         price: 225000,
         description : "To gain the power he needs to save his friend from a cursed spirit, Yuji Itadori swallows a piece of a demon, only to find himself caught in the midst of a horrific war of the supernatural! While investigating a strange set of mysterious deaths, Itadori meets Junpei, a troubled kid who is often bullied at school. However, Junpei is also befriended by the culprit behind the bloody incident—Mahito, a mischievous cursed spirit! Mahito sets in motion a devious plan involving Junpei, hoping to ensnare Itadori as well.",
-        discount_precent: null,
+        discount_precent: 6,
         language : "Tiếng Anh",
         supplier: "Diamond Book Distributors",
         author : "Gege Akutami",
@@ -396,7 +405,7 @@ export const dataForeignBooks = [
         "Jujutsu Kaisen 12 (English Edition)",
         price: 225000,
         description : "To gain the power he needs to save his friend from a cursed spirit, Yuji Itadori swallows a piece of a demon, only to find himself caught in the midst of a horrific war of the supernatural! While investigating a strange set of mysterious deaths, Itadori meets Junpei, a troubled kid who is often bullied at school. However, Junpei is also befriended by the culprit behind the bloody incident—Mahito, a mischievous cursed spirit! Mahito sets in motion a devious plan involving Junpei, hoping to ensnare Itadori as well.",
-        discount_precent: null,
+        discount_precent: 7,
         language : "Tiếng Anh",
         supplier: "Diamond Book Distributors",
         author : "Gege Akutami",
@@ -416,7 +425,7 @@ export const dataForeignBooks = [
         "Jujutsu Kaisen 0 (English Edition)",
         price: 225000,
         description : "To gain the power he needs to save his friend from a cursed spirit, Yuji Itadori swallows a piece of a demon, only to find himself caught in the midst of a horrific war of the supernatural! While investigating a strange set of mysterious deaths, Itadori meets Junpei, a troubled kid who is often bullied at school. However, Junpei is also befriended by the culprit behind the bloody incident—Mahito, a mischievous cursed spirit! Mahito sets in motion a devious plan involving Junpei, hoping to ensnare Itadori as well.",
-        discount_precent: null,
+        discount_precent: 8,
         language : "Tiếng Anh",
         supplier: "Diamond Book Distributors",
         author : "Gege Akutami",
@@ -437,7 +446,7 @@ export const dataForeignBooks = [
         "Chainsaw Man 3 (English Edition)",
         price: 225000,
         description : "Broke young man + chainsaw demon = Chainsaw Man! . Denji was a small-time devil hunter just trying to survive in a harsh world. After being killed on a job, he is revived by his pet devil Pochita and becomes something new and dangerous—Chainsaw Man!",
-        discount_precent: null,
+        discount_precent: 9,
         language : "Tiếng Anh",
         supplier: "Diamond Book Distributors",
         author : "Tatsuki Fujimoto",
@@ -457,7 +466,7 @@ export const dataForeignBooks = [
         "Chainsaw Man 2 (English Edition)",
         price: 225000,
         description : "Broke young man + chainsaw demon = Chainsaw Man! . Denji was a small-time devil hunter just trying to survive in a harsh world. After being killed on a job, he is revived by his pet devil Pochita and becomes something new and dangerous—Chainsaw Man!",
-        discount_precent: null,
+        discount_precent: 10,
         language : "Tiếng Anh",
         supplier: "Diamond Book Distributors",
         author : "Tatsuki Fujimoto",
@@ -477,7 +486,7 @@ export const dataForeignBooks = [
         "Chainsaw Man 8 (English Edition)",
         price: 225000,
         description : "Broke young man + chainsaw demon = Chainsaw Man! . Denji was a small-time devil hunter just trying to survive in a harsh world. After being killed on a job, he is revived by his pet devil Pochita and becomes something new and dangerous—Chainsaw Man!",
-        discount_precent: null,
+        discount_precent: 11,
         language : "Tiếng Anh",
         supplier: "Diamond Book Distributors",
         author : "Tatsuki Fujimoto",
@@ -497,7 +506,7 @@ export const dataForeignBooks = [
         "Chainsaw Man 10 (English Edition)",
         price: 225000,
         description : "Broke young man + chainsaw demon = Chainsaw Man! . Denji was a small-time devil hunter just trying to survive in a harsh world. After being killed on a job, he is revived by his pet devil Pochita and becomes something new and dangerous—Chainsaw Man!",
-        discount_precent: null,
+        discount_precent: 12,
         language : "Tiếng Anh",
         supplier: "Diamond Book Distributors",
         author : "Tatsuki Fujimoto",
@@ -517,7 +526,7 @@ export const dataForeignBooks = [
         "Chainsaw Man 11 (English Edition)",
         price: 225000,
         description : "Broke young man + chainsaw demon = Chainsaw Man! . Denji was a small-time devil hunter just trying to survive in a harsh world. After being killed on a job, he is revived by his pet devil Pochita and becomes something new and dangerous—Chainsaw Man!",
-        discount_precent: null,
+        discount_precent: 13,
         language : "Tiếng Anh",
         supplier: "Diamond Book Distributors",
         author : "Tatsuki Fujimoto",
@@ -537,7 +546,7 @@ export const dataForeignBooks = [
         "Chainsaw Man 5 (English Edition)",
         price: 225000,
         description : "Broke young man + chainsaw demon = Chainsaw Man! . Denji was a small-time devil hunter just trying to survive in a harsh world. After being killed on a job, he is revived by his pet devil Pochita and becomes something new and dangerous—Chainsaw Man!",
-        discount_precent: null,
+        discount_precent: 14,
         language : "Tiếng Anh",
         supplier: "Diamond Book Distributors",
         author : "Tatsuki Fujimoto",

@@ -327,6 +327,7 @@
     border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .more-btn:hover {

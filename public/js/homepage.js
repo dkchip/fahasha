@@ -11,17 +11,49 @@ const $$$ = (el) => {
   return document.querySelectorAll(el);
 };
 
+const accountLocal = localStorage.getItem('accounts')
+const logindLocal = localStorage.getItem('logind')
+if(!accountLocal){
+  let user = [
+        {
+            "id" : 1,
+            "name" : "hoang viet",
+            "cart" : [
+            ]
+        }
+    ]
+    localStorage.setItem("usersInfo", JSON.stringify(user))
+
+
+    let account = [
+        {
+            "id" : 1,
+            "email" : "admin@gmail.com",
+            "password" : 123123
+        }
+    ]
+
+    localStorage.setItem("accounts", JSON.stringify(account))
+}
+
+if(!logindLocal){
+  let logind = {
+    status : false,
+    dataUser : {
+
+    }
+  }
+
+  localStorage.setItem("logind", JSON.stringify(logind))
+
+}
+
 // Get element HTML
 const categogyEl = $$(".category-product-list");
-
 const textbookMenuListEl = $$$(".textbook-menu-item");
-
 const backpackMenuListEl = $$$(".backpack-menu-item");
-
 const toyMenuListEl = $$$(".toy-menu-item");
-
 const foreignMenuListEl = $$$(".foreign-menu-item");
-
 const forgeinProductEl = $$(".foreign-product-list");
 
 
@@ -98,8 +130,10 @@ html = dataCategory.map((el, index) => {
         </div>
     `;
 });
+if(categogyEl){
+  categogyEl.innerHTML = html.join("");
 
-categogyEl.innerHTML = html.join("");
+}
 
 // Handle active menu textbook
 
@@ -155,7 +189,6 @@ const renderTextbook = (id) => {
     }
 
     htmlProduct = renderProductItem(newDataTextbooks)
-
     textbookProductList.innerHTML = htmlProduct.join("");
 };
 
