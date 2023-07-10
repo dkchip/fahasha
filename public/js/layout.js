@@ -84,7 +84,12 @@ searchInputEl.addEventListener("click", () => {
 })
 
 searchInputEl.addEventListener("focusout", () => {
-  searchResults.classList.remove("show")
+  const timerId = setTimeout(() => {
+    searchResults.classList.remove("show")
+  },200)
+  return () => {
+    clearTimeout(timerId)
+  }
 })
 
 menuHeaderEl.addEventListener('mouseover',() => {
@@ -98,7 +103,7 @@ const renderFeatureCategory =  () => {
   html = dataCategory.map((el,index) => { 
     return (
       `
-      <a key=${index} class="featured-category-item" href="">
+      <a key=${index} class="featured-category-item" href=${el.path}>
         <img src=${el.image} alt=${el.title}>
         <span>${el.title}</span>
       </a>
@@ -125,24 +130,28 @@ const renderSeachResults = (value) => {
   let results = []
   let htmlProduct = ''
   if(value == ''){
-    searchResultListEl.innerHTML = ''
+    searchResultListEl.innerHTML = '<span style="font-size: 1.2rem;">Không tìm thấy kết quả.</span>'
   }else{
     results = dataProductAll.filter((el) => {
       if(el.title.toLowerCase().includes(value.toLowerCase())) {
         return el
       }
     })
-  
-    htmlProduct = results.slice(0,6).map((product,index) => {
-      return (
-        ` <a key = ${index} class="search-result-item" href="">
-            <img src=${product.image}>
-            <span>${product.title}</span>
-          </a>
-        `
-      )
-    })
-    searchResultListEl.innerHTML = htmlProduct.join('')
+    if(results.length ==0){
+       searchResultListEl.innerHTML = '<span style="font-size: 1.2rem;">Không tìm thấy kết quả.</span>'
+
+    }else{
+      htmlProduct = results.slice(0,6).map((product,index) => {
+        return (
+          ` <a key = ${index} class="search-result-item" href="./detail.html?id=${product.id}">
+              <img src=${product.image}>
+              <span>${product.title}</span>
+            </a>
+          `
+        )
+      })
+      searchResultListEl.innerHTML = htmlProduct.join('')
+    }
   }
 
   
@@ -155,6 +164,7 @@ searchInputEl.addEventListener('input',(e) => {
     if(value.startsWith(" ")){
       searchInputEl.value = "";
     }else{
+      console.log(value)
       onInput(value.trim())
     }
 })

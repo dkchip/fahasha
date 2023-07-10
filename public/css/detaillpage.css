@@ -1,0 +1,147 @@
+.product-detail-wrap{
+    display: flex;
+    flex-direction: column;
+}
+
+.product-detail{
+    display: flex;
+    padding: 14px 10px;
+    justify-content: space-between;
+}
+
+.product-detail-img{
+    width: 35%;
+    position: relative;
+}
+
+
+.product-detail-img img{
+    width: 100%;
+}
+
+.product-detail-preview{
+    width: 60%;
+}
+
+.product-detail-title{
+    margin-bottom: 10px;
+    font-size: 2.4rem;
+}
+
+.product-supplier{
+    padding-right: 80px;
+    display: flex;  
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.product-detail-price{
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.product-detail-original-price{
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-right: 6px;
+    color: #c92127 ;
+}
+
+.product-detail-discount-price{
+    margin-right: 6px;
+    text-decoration: line-through;
+}
+
+.percent{
+    background-color: #c92127;
+    border-radius: 4px;
+    padding: 2px;
+    color: #fff;
+
+}
+
+.delivery-time,
+.product-policy{
+    margin-bottom: 10px;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.delivery-time span,
+.product-policy span{
+    width: 50%;
+}
+
+.product-quantity{
+    display: flex;
+}
+
+.product-quantity>span{
+    margin-right: 30px;
+}
+
+.product-quantity div{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 4px 6px;
+}
+
+.product-count{
+    margin: 0 16px;
+}
+
+.product-quantity div i {
+    cursor: pointer;
+}
+
+.product-btn{
+    padding: 16px 60px;
+}
+
+.product-btn button {
+    width: 220px;
+    padding: 12px 0;
+    margin-right: 10px;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn-cart{
+    border: 1.5px solid #c92127;
+
+}
+
+.btn-cart a{
+    text-decoration: none;
+    color: #c92127;
+    font-weight: 600;
+}
+
+.btn-buy{
+    background-color: #c92127;
+ 
+}
+
+
+.btn-buy a{
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+ 
+}
+
+.table-info tr{
+
+}
+
+.product-description span{
+    display: block;
+     padding: 12px 0;
+
+}

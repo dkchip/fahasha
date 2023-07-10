@@ -3,27 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="../public/css/globalstyle.css">
-    <link rel="stylesheet" href="../public/css/homepage.css">
-    <link rel="stylesheet" href="../public/css/layout.css">
-    <link rel="stylesheet" href="../public/fontawesome/css/all.min.css">
-    <script type="module" src="../public/js/layout.js"></script>
+    <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="./public/css/globalstyle.css">
+    <link rel="stylesheet" href="./public/css/layout.css">
+    <link rel="stylesheet" href="./public/css/login.css">
+    <link rel="stylesheet" href="./public/fontawesome/css/all.min.css">
+    <script type="module" src="./public/js/layout.js"></script>
 </head>
 <body> 
     <div class="main">
         <header class="header">
             <div class="header-top-banner  " >
-                <img class="width-content" src="../public/imgs/banner-top.jpg" alt="">
+                <img class="width-content" src="./public/imgs/banner-top.jpg" alt="">
             </div>
             <div class="header-container">
                 <div class="header-inner width-content">
                     <div class="header-inner-left">
-                        <img src="../public//imgs/fahasa_logo.png" alt="">
+                        <a href="index.html">
+                            <img src="./public//imgs/fahasa_logo.png" alt="">
+                        </a>
                     </div>
                     <div class="header-inner-center">
                         <div class="menu">
-                            <img src="../public/imgs/header_menu.png" alt="">
+                            <img src="./public/imgs/header_menu.png" alt="">
                             <div class="header-menu-category">
                                 <div class="menu-category-wrap">
                                     <div class="nav-category">
@@ -51,18 +53,16 @@
                             <div class="search-result-wrapper">
                                 <div class="search-result">
                                     <div class="result-heading">
+                                        <i class="fa-solid fa-arrow-trend-up"></i>
                                         <h4>Sản phẩm</h4>
                                     </div>
                                     <div class="search-result-list">
-                                        <a class="search-result-item" href="">
-                                            <img src="../public/imgs/books/sach-bai-tap-1.jpg" alt="">
-                                            <span>Sách bài tập </span>
-                                        </a>
+                                        
                                     </div>
                                 </div>
                                 <div class="featured-category-wrapper">
                                     <div class="featured-category-heading">
-                                        <img src="../public/imgs/header_menu.png" alt="">
+                                        <img src="./public/imgs/header_menu.png" alt="">
                                         <h4>Danh mục nổi bật</h4>
                                     </div>
                                     <div class="featured-category">
@@ -89,8 +89,11 @@
                         <div class="account">
                             <i class="fa-regular fa-user"></i>
                             <span class="header-title">Tài khoản</span>
+                            <div class="account-dropdown">
+                                <a href="login.html" class="link-login">Đăng nhập</a>
+                                <a href="register.html" class="link-register">Đăng ký</a>
+                            </div>
                         </div>
-                        <div class="languages"></div>
                     </div>
                     
                 </div>
@@ -98,7 +101,29 @@
         </header>
         <div class="body">
             <div class="container width-content">
-               
+                <div class="form-login">
+                    <form class="form" action="" method="POST">
+                        <div class="form-link-btn">
+                            <a class="from-link-login"  href="login.html" >Đăng nhập</a> 
+                            <a class="from-link-register" href="register.html" > Đăng kí </a>
+                        </div>
+                        <div class="form-row">
+                            <label for="username">Số điện thoại/Email</label><br>
+                            <input id="username" type="text" name="username"> <br>
+                        </div>
+                        <div class="form-row">
+                            <label for="password">Mật khẩu</label><br>
+                            <input id="password" type="password" name="password"> <br>
+                        </div>
+                        <div class="form-row">
+                            <span></span>
+                            <a class="link" href="">Quên mật khẩu</a>
+                        </div>
+                        <div class="row">
+                            <button class="btnsubmit" type="button" name="submmit">Đăng nhập</button>
+                        </div>
+                    </form>
+               </div>
             </div>
         </div>
         <footer class="footer  ">
@@ -117,12 +142,12 @@
                 </div>
                 <div class="footer-content">
                     <div class="footer-content-left">
-                        <img src="../public/imgs/fahasa_logo.png" alt="">
+                        <img src="./public/imgs/fahasa_logo.png" alt="">
                         <span>Lầu 5, 387-389 Hai Bà Trưng Quận 3 TP HCM</span>
                         <span>Công Ty Cổ Phần Phát Hành Sách TP HCM - FAHASA60 - 62 Lê Lợi, Quận 1, TP. HCM, Việt Nam</span>
                         <span>Fahasa.com nhận đặt hàng trực tuyến và giao hàng tận nơi.</span>
                         <span>KHÔNG hỗ trợ đặt mua và nhận hàng trực tiếp tại văn phòng cũng như tất cả Hệ Thống Fahasa trên toàn quốc.</span>
-                        <img  class="footer-content-img" src="../public/imgs/logo-bo-cong-thuong-da-thong-bao1.png" alt="">
+                        <img  class="footer-content-img" src="./public/imgs/logo-bo-cong-thuong-da-thong-bao1.png" alt="">
                         <div class="footer-icon">
                             <i class="fa-brands fa-facebook"></i>
                             <i class="fa-brands fa-square-instagram"></i>
@@ -132,8 +157,8 @@
                             <i class="fa-brands fa-pinterest"></i>
                         </div>
                         <div class="dowload-icon">
-                            <img src="../public/imgs/gg-play.png" alt="">
-                            <img src="../public/imgs/app-store.png" alt="">
+                            <img src="./public/imgs/gg-play.png" alt="">
+                            <img src="./public/imgs/app-store.png" alt="">
                         </div>
                     </div>
                     <div class="footer-content-right">
@@ -181,34 +206,34 @@
                         </div>
                         <div class="footer-delivery">
                             <div>
-                                <img src="../public/imgs/vnpost1.png" alt="">
+                                <img src="./public/imgs/vnpost1.png" alt="">
                             </div>
                             <div>
-                                <img src="../public/imgs/ahamove_logo3.png" alt="">
+                                <img src="./public/imgs/ahamove_logo3.png" alt="">
                             </div>
                             <div>
-                                <img src="../public/imgs/icon_giao_hang_nhanh1.png" alt="">
+                                <img src="./public/imgs/icon_giao_hang_nhanh1.png" alt="">
                             </div>
                             <div>
-                                <img src="../public/imgs/icon_snappy1.png" alt="">
+                                <img src="./public/imgs/icon_snappy1.png" alt="">
                             </div>
                             <div>
-                                <img src="../public/imgs/Logo_ninjavan.png" alt="">
+                                <img src="./public/imgs/Logo_ninjavan.png" alt="">
                             </div>
                             <div>
-                                <img src="../public/imgs/vnpay_logo.png" alt="">
+                                <img src="./public/imgs/vnpay_logo.png" alt="">
                             </div>
                             <div>
-                                <img src="../public/imgs/ZaloPay-logo-130x83.png" alt="">
+                                <img src="./public/imgs/ZaloPay-logo-130x83.png" alt="">
                             </div>
                             <div>
-                                <img style="width: 30%;" src="../public/imgs/momopay.png" alt="">
+                                <img style="width: 30%;" src="./public/imgs/momopay.png" alt="">
                             </div>
                             <div>
-                                <img src="../public/imgs/shopeepay_logo.png" alt="">
+                                <img src="./public/imgs/shopeepay_logo.png" alt="">
                             </div>
                             <div>
-                                <img src="../public/imgs/logo_moca_120.jpg" alt="">
+                                <img src="./public/imgs/logo_moca_120.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -219,7 +244,8 @@
             </div>
         </footer>
     </div>
-    <script type="module" src="../public/js/homepage.js" ></script>
+
+    <script type="module" src="./public/js/homepage.js" ></script>
 
 </body>
 </html>

@@ -1,5 +1,5 @@
 import { dataCategory } from "./data/category.js";
-import { dataTextbooks } from "./data/books.js";
+import { dataTextbooks,dataForeignBooks } from "./data/books.js";
 import {dataBackpacks} from "./data/backpacks.js"
 import { dataToys } from "./data/toys.js";
 
@@ -20,11 +20,15 @@ const backpackMenuListEl = $$$(".backpack-menu-item");
 
 const toyMenuListEl = $$$(".toy-menu-item");
 
+const foreignMenuListEl = $$$(".foreign-menu-item");
+
+const forgeinProductEl = $$(".foreign-product-list");
+
 
 // Render element
 const renderProductItem = (datas) => {
   let htmlProduct = "";
-  htmlProduct = datas.map((el) => {
+  htmlProduct = datas.slice(0,6).map((el) => {
    
     const price = el.price.toLocaleString().replace(",", ".");
     const discountPrice = ((el.price / 100) * (100 - el.discount_precent))
@@ -32,7 +36,7 @@ const renderProductItem = (datas) => {
       .replace(",", ".");
     return `
       <div class="div-product-item animation-show"  >
-          <a href = "/">
+          <a href = "./detail.html?id=${el.id}">
               <img class="product-img" src=${el.image} alt="">
               <div class="product-info">
                   <span class="product-title">
@@ -53,13 +57,41 @@ const renderProductItem = (datas) => {
   return htmlProduct;
 }
 
+const renderCategoryTabItem = (datas) => {
+  let htmlProduct = "";
+  for(var i = 0; i < datas.length; i += 2) {
+    const divs = datas
+      .slice(i, i + 2)
+      .map((el) => {
+        const price = el.price.toLocaleString().replace(",", ".");
+        return `<div class="div-product-item  animation-show"  >
+                  <a href = "./detail.html?id=${el.id}" class="df">
+                      <img class="product-img" src=${el.image} alt=${el.title}>
+                      <div class="product-info">
+                          <span class="product-title">
+                            ${el.title}
+                          </span>
+                          <div class="product-discount-price">
+                              <span>${price}</span>
+                          </div>
+                      </div>
+                  </a>
+                </div>`
+      })
+      .join('')
+
+      htmlProduct += `<div class="div-product-item-wrap">${divs}</div>`;
+}
+  return htmlProduct;
+}
+
 
 // Render category
 let html = "";
 html = dataCategory.map((el, index) => {
   return `
         <div class="category-product-item" key = ${index}>
-            <a href=${el.path} class="category-product-link">
+            <a href = ${el.path} class="category-product-link">
                 <img src=${el.image} alt="">
                 <p class="category-title">${el.title}</p>
             </a>
@@ -105,13 +137,21 @@ const renderTextbook = (id) => {
       case "2" :
           newDataTextbooks = []
           newDataTextbooks = dataTextbooks.filter((el) => {
-              console.log(el)
               if(el.school_level.toString() === id) {
                   console.log(el.school_level)
                   return el
               }
           });
           break;
+      case "3" :
+        newDataTextbooks = []
+        newDataTextbooks = dataTextbooks.filter((el) => {
+            if(el.school_level.toString() === id) {
+                console.log(el.school_level)
+                return el
+            }
+        });
+        break;
     }
 
     htmlProduct = renderProductItem(newDataTextbooks)
@@ -149,7 +189,7 @@ const renderBackpack = (id) => {
       case "1" :
           newDataBackpacks = []
           newDataBackpacks = dataBackpacks.filter((el) => {
-              if(el.school_level.toString() === id) {
+              if(el.price < 700000) {
 
                   return el
               }
@@ -158,7 +198,7 @@ const renderBackpack = (id) => {
     
     }
 
-    htmlProduct = renderProductItem(newDataBackpacks)
+    htmlProduct = renderProductItem(newDataBackpacks.slice(0,5))
     backpackProductList.innerHTML = htmlProduct.join("");
 };
 renderBackpack("0");
@@ -199,9 +239,53 @@ const renderToys = (id) => {
     
     }
 
-    htmlProduct = renderProductItem(newDataToys)
+    htmlProduct = renderProductItem(newDataToys.slice(0,5))
     toyProductList.innerHTML = htmlProduct.join("");
     };
 
 renderToys("0");
 
+
+
+// Handle Active Menu Toy
+foreignMenuListEl.forEach((el) => {
+  el.addEventListener("click", () => {
+    const id = el.getAttribute("id");
+    renderForeign(id)
+
+    var current = $$(".foreign-menu-item.active");
+    current.classList.remove("active");
+
+    el.classList.add("active");
+  });
+});
+
+// Render toy products
+const renderForeign = (id) => {
+    const toyProductList = $$(".toy-product-list");
+    let htmlProduct = "";
+    let newDataForeign = [];
+    switch(id){
+      case "foreign-0" :
+        newDataForeign = dataForeignBooks.filter((el) => {
+          if(el.title.includes("Jujutsu Kaisen")){
+            return el;
+          }
+        });
+      
+          break;
+      case "foreign-1" :
+        newDataForeign = dataForeignBooks.filter((el) => {
+          if(el.title.includes("Chainsaw")){
+            return el;
+          }
+        });
+          break;
+    
+    }
+
+    htmlProduct = renderCategoryTabItem(newDataForeign)
+    forgeinProductEl.innerHTML = htmlProduct;
+    };
+
+    renderForeign("foreign-0");

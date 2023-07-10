@@ -3,7 +3,7 @@ export const dataCategory = [
         id : 1,
         title : "Sách Trong Nước",
         image : "./public/imgs/categorys/calculator.jpg",
-        path : "/vpp.html",
+        path : "/sach-trong-nuoc.html?type=domestic",
         icon : `<i class="fa-solid fa-book" style="color: #f9584f;"></i>`,
         dataAll : [
             {
@@ -79,7 +79,7 @@ export const dataCategory = [
         id : 2,
         title : "FOREIGN BOOKS",
         image : "./public/imgs/categorys/toys.jpg",
-        path : "/toys.html",
+        path : "/foreign-book.html?type=foreign",
         icon : `<i class="fa-solid fa-earth-americas" style="color: #8d81fc;"></i>`,
 
         dataAll : [
@@ -153,7 +153,7 @@ export const dataCategory = [
         id : 3,
         title : "Dụng Cụ Học Sinh",
         image : "./public/imgs/categorys/ngon-tinh-dam-mi.jpg",
-        path : "/ngon-tinh-dam-mi.html",
+        path : "./dung-cu-hoc-sinh.html?type=dungcu",
         icon : `<i class="fa-sharp fa-solid fa-pen-to-square" style="color: #44a5f7;"></i>`,
 
         dataAll : [
@@ -231,7 +231,7 @@ export const dataCategory = [
         id : 4,
         title : "Đồ Chơi",
         image : "./public/imgs/categorys/sach-hoc-ngoai-ngu.jpg",
-        path : "/sach-hoc-ngoai-ngu.html",
+        path : "/do-choi.html?type=toy",
         icon : `<i class="fa-solid fa-car-side" style="color: #fabb43;"></i>`,
         dataAll : [
             {

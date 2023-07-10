@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Tất cả sản phẩm</title>
     <link rel="stylesheet" href="../public/css/globalstyle.css">
-    <link rel="stylesheet" href="../public/css/homepage.css">
+    <link rel="stylesheet" href="../public/css/allProduct.css">
     <link rel="stylesheet" href="../public/css/layout.css">
     <link rel="stylesheet" href="../public/fontawesome/css/all.min.css">
     <script type="module" src="../public/js/layout.js"></script>
+    <script type="text/javascript" src="../public/js/allProduct.js"></script>
+    <script type="module" src="../public/js/renderProduct.js"></script>
 </head>
 <body> 
     <div class="main">
@@ -19,7 +21,9 @@
             <div class="header-container">
                 <div class="header-inner width-content">
                     <div class="header-inner-left">
-                        <img src="../public//imgs/fahasa_logo.png" alt="">
+                        <a href="../index.html">
+                            <img src="../public/imgs/fahasa_logo.png" alt="">
+                        </a>
                     </div>
                     <div class="header-inner-center">
                         <div class="menu">
@@ -90,15 +94,103 @@
                             <i class="fa-regular fa-user"></i>
                             <span class="header-title">Tài khoản</span>
                         </div>
-                        <div class="languages"></div>
                     </div>
-                    
                 </div>
             </div>
         </header>
         <div class="body">
             <div class="container width-content">
-               
+                <!-- Write code here -->
+                <div class="breadcrumbs">
+                    <a href="">Home</a>
+                    <span>></span>
+                    <a href="">Tất Cả Nhóm Sản Phẩm</a>
+                </div>
+                <div class="container-inner">
+                    <div class="sidebar-left">
+                        <div class="sidebar-left-content">
+                            <div class="sidebar-left-row ">
+                                <h4 class="row-heading">Nhóm Sản Phẩm</h4>
+                                <div class="sidebar-left-nav">
+                                    <p class="active-link">Tất cả sản phẩm</p>
+                                    <div class="sidebar-left-links">
+                                        <a  href="../sach-trong-nuoc.html">Sách Trong Nước</a>
+                                        <a href="../foreign-book.html?type=foreign">FOREIGN BOOKS</a>
+                                        <a href="../dung-cu-hoc-sinh.htmltype=dungcu">Dụng Cụ Học Sinh</a>
+                                        <a href="../do-choi.html?type=toy">Đồ Chơi</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sidebar-left-row ">
+                                <h4 class="row-heading">Giá</h4>
+                                <div class="row-even row-even-price">
+                                    <div class="row-option">
+                                        <input onclick="test(this,0,150000)" value="ac" type="checkbox">
+                                        <label >0đ - 150,000đ</label>
+                                    </div>
+                                    <div class="row-option">
+                                        <input onclick="test(this,150000,300000)" type="checkbox">
+                                        <label for="">150,000đ - 300,000đ</label>
+                                    </div>
+                                    <div class="row-option">
+                                        <input onclick="test(this,300000,500000)" type="checkbox">
+                                        <label for="">300,000đ - 500,000đ</label>
+                                    </div>
+                                    <div class="row-option">
+                                        <input onclick="test(this,500000,750000)" type="checkbox">
+                                        <label for="">500,000đ - 750,000đ</label>
+                                    </div>
+                                    <div class="row-option">
+                                        <input onclick="test(this,750000,99999999)" type="checkbox">
+                                        <label for="">750,000đ - Trở lên</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sidebar-left-row ">
+                                <h4 class="row-heading">Nơi Gia Công & Sản Xuất</h4>
+                                <div class="row-even row-even-production-site">
+                                    <div class="row-option">
+                                        <input onclick="test(this,0,150000)" value="ac" type="checkbox">
+                                        <label >Việt Nam</label>
+                                    </div>
+                                    <div class="row-option">
+                                        <input onclick="test(this,150000,300000)" type="checkbox">
+                                        <label for="">Trung Quốc</label>
+                                    </div>
+        
+                                </div>
+                            </div>
+                            <div class="sidebar-left-row ">
+                                <h4 class="row-heading">Cấp Học</h4>
+                                <div class="row-even row-even-school-level">
+                                    <div class="row-option ">
+                                        <input onclick="test(this,0,150000)" value="ac" type="checkbox">
+                                        <label >Mầm Non</label>
+                                    </div>
+                                    <div class="row-option">
+                                        <input onclick="test(this,150000,300000)" type="checkbox">
+                                        <label for="">Cấp 1</label>
+                                    </div>
+                                    <div class="row-option">
+                                        <input onclick="test(this,0,150000)" value="ac" type="checkbox">
+                                        <label >Cấp 2</label>
+                                    </div>
+                                    <div class="row-option">
+                                        <input onclick="test(this,150000,300000)" type="checkbox">
+                                        <label for="">Cấp 3</label>
+                                    </div>
+
+        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="list-product">
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <footer class="footer  ">
@@ -220,6 +312,7 @@
         </footer>
     </div>
     <script type="module" src="../public/js/homepage.js" ></script>
+   
 
 </body>
 </html>

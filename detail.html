@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sách [Manga] Dược Sư Tự Sự - Tập 9 - Tặng Kèm Standee Ivory - FAHASA.COM</title>
-    <link rel="stylesheet" href="./public/css/homepage.css">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="./public/css/globalstyle.css">
+    <link rel="stylesheet" href="./public/css/layout.css">
+    <link rel="stylesheet" href="./public/css/detaillpage.css">
     <link rel="stylesheet" href="./public/fontawesome/css/all.min.css">
+    <script type="module" src="./public/js/layout.js"></script>
 </head>
-<body>
+<body> 
     <div class="main">
         <header class="header">
             <div class="header-top-banner  " >
@@ -16,14 +19,60 @@
             <div class="header-container">
                 <div class="header-inner width-content">
                     <div class="header-inner-left">
-                        <img src="./public//imgs/fahasa_logo.png" alt="">
+                        <a href="./index.html">
+                            <img src="./public//imgs/fahasa_logo.png" alt="">
+                        </a>
                     </div>
                     <div class="header-inner-center">
                         <div class="menu">
+
                             <img src="./public/imgs/header_menu.png" alt="">
-                        </div>
+                            <div class="header-menu-category">
+                                <div class="menu-category-wrap">
+                                    <div class="nav-category">
+                                        <div class="nav-heading">
+                                            <h3>Danh mục sản phẩm</h3>
+                                        </div>
+                                        <div class="nav-links">
+                                            <!-- Render js -->
+                                        </div>
+                                    </div>
+    
+                                    <div class="menu-category-content">
+                                        <div class="menu-category-heading">
+                                            <!-- Render js -->
+                                        </div>
+                                        <div class="menu-category-row">
+                                            <!-- Render js -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
                         <div class="search">
                             <input type="text" placeholder="Tìm kiếm sản phẩm mong muốn">
+                            <div class="search-result-wrapper">
+                                <div class="search-result">
+                                    <div class="result-heading">
+                                        <i class="fa-solid fa-arrow-trend-up"></i>
+                                        <h4>Sản phẩm</h4>
+                                    </div>
+                                    <div class="search-result-list">
+                                        
+                                    </div>
+                                </div>
+                                <div class="featured-category-wrapper">
+                                    <div class="featured-category-heading">
+                                        <img src="./public/imgs/header_menu.png" alt="">
+                                        <h4>Danh mục nổi bật</h4>
+                                    </div>
+                                    <div class="featured-category">
+                                        <div class="featured-category-list">
+                                            <!-- rennder -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <button class="search-btn">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
@@ -41,76 +90,140 @@
                         <div class="account">
                             <i class="fa-regular fa-user"></i>
                             <span class="header-title">Tài khoản</span>
+                            <div class="account-dropdown">
+                                <a href="login.html" class="link-login">Đăng nhập</a>
+                                <a href="register.html" class="link-register">Đăng ký</a>
+                            </div>
                         </div>
-                        <div class="languages"></div>
                     </div>
                     
                 </div>
             </div>
         </header>
-    <div class="body">
-        <div class="container width-content">
-        <div class="banner-main" style="height: 450px;">
-            <div class="banner-left" style="width: 600px; height: 600px;">
-                <ul class="banner-list">
-                    <li class="banner-item">
-                        <img src="./public/imgs/manga/dsts9.jpg" style="width: 400px; height: 400px;">
-                    </li>
-                </ul>
-            </div>
-            <div class="banner-right" style="width: 800px;">
-                <ul class="banner-list" style="height: 400px;">
-                    <li class="banner-item">
-                        <span style="font-size: 24px;font-weight: bolder;">[Manga] Dược Sư Tự Sự - Tập 9 - Tặng Kèm Standee Ivory</span> <br> <br>
-                        <div>
-                            <table>
-                                <tr>
-                                    <td>
-                                        <span style="font-size: 13px;">Nhà cung cấp: <link>Nhà Xuất Bản Kim Đồng</link></span>
-                                    </td>
-                                    <td>
-                                        <span style="font-size: 13px;">Tác giả: <span style="font-weight: bolder;">Natsu Hyuuga, Touco Shino</span></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span style="font-size: 13px">Nhà xuất bản: <span style="font-weight: bolder;">Kim Đồng</span>
-                                    </td>
-                                    <td>
-                                        <span style="font-size: 13px;">Hình thức bìa: <span style="font-weight: bolder;">Bìa Mềm</span></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span style="font-size: 13px;">Bộ: <link>Dược Sư Tập Sự</link></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2" style="font-size: 30px;">44.650</td>
-                                </tr>
-                                <tr></tr>
-                                <tr>
-                                    <td style="font-size: 13px;">Thời gian giao hàng <span>Giao hàng đến</span><span><button value="Thay đổi" name="change">Thay đổi</button></span></td>
-                                </tr>
-                                <tr>
-                                    <td style="font-size: 13px;">Chính sách đổi trả</td>
-                                </tr>
-                            </table>
+        <div class="body">
+            <div class="container width-content container-detail" style="background-color: white;border-radius: 10px;">
+            
+        </div>
+        <footer class="footer  ">
+            <div class="footer-wrapper width-content ">
+                <div class="footer-top">
+                    <div class="footer-top-inner">
+                        <div class="footer-top-left">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>Đăng ký nhận bản tin</span>
                         </div>
-                    </li>
-                </ul>
+                        <div class="footer-top-right">
+                            <input type="text" name="" id="" placeholder="Nhập địa chỉ email của bạn">
+                            <button>Đăng ký</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-content">
+                    <div class="footer-content-left">
+                        <img src="./public/imgs/fahasa_logo.png" alt="">
+                        <span>Lầu 5, 387-389 Hai Bà Trưng Quận 3 TP HCM</span>
+                        <span>Công Ty Cổ Phần Phát Hành Sách TP HCM - FAHASA60 - 62 Lê Lợi, Quận 1, TP. HCM, Việt Nam</span>
+                        <span>Fahasa.com nhận đặt hàng trực tuyến và giao hàng tận nơi.</span>
+                        <span>KHÔNG hỗ trợ đặt mua và nhận hàng trực tiếp tại văn phòng cũng như tất cả Hệ Thống Fahasa trên toàn quốc.</span>
+                        <img  class="footer-content-img" src="./public/imgs/logo-bo-cong-thuong-da-thong-bao1.png" alt="">
+                        <div class="footer-icon">
+                            <i class="fa-brands fa-facebook"></i>
+                            <i class="fa-brands fa-square-instagram"></i>
+                            <i class="fa-brands fa-youtube"></i>
+                            <i class="fa-brands fa-square-twitter"></i>
+                            <i class="fa-brands fa-square-tumblr"></i>
+                            <i class="fa-brands fa-pinterest"></i>
+                        </div>
+                        <div class="dowload-icon">
+                            <img src="./public/imgs/gg-play.png" alt="">
+                            <img src="./public/imgs/app-store.png" alt="">
+                        </div>
+                    </div>
+                    <div class="footer-content-right">
+                        <div class="footer-service">
+                            <div>
+                                <h3>DỊCH VỤ</h3>
+                                <a href="">Điều khoản sử dụng</a>
+                                <a href="">Chính sách bảo mật thông tin cá nhân</a>
+                                <a href="">Chính sách bảo mật thanh toán</a>
+                                <a href="">Giới thiệu Fahasa</a>
+                                <a href="">Hệ thống trung tâm - nhà sách</a>
+                            </div>
+                            <div>
+                                <h3>HỖ TRỢ</h3>
+                                <a href="">Chính sách đổi - trả - hoàn tiền</a>
+                                <a href="">Chính sách bảo hành - bồi hoàn</a>
+                                <a href="">Chính sách vận chuyển</a>
+                                <a href="">Chính sách khách sỉ</a>
+                                <a href="">Phương thức thanh toán và xuất HĐ</a>
+                            </div>
+                            <div>
+                                <h3>TÀI KHOẢN CỦA TÔI</h3>
+                                <a href="">Đăng nhập/Tạo mới tài khoản</a>
+                                <a href="">Thay đổi địa chỉ khách hàng</a>
+                                <a href="">Chi tiết tài khoản</a>
+                                <a href="">Lịch sử mua hàng</a>
+                            </div>
+                        </div>
+                        <div class="footer-concact">
+                            <h3>LIÊN HỆ</h3>
+                           <div>
+                                <div>
+                                    <i class="fa-sharp fa-solid fa-location-dot"></i>
+                                    <span>60-62 Lê Lợi, Q.1, TP. HCM</span>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span> cskh@fahasa.com.vn</span>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-phone"></i>
+                                    <span> 1900636467</span>
+                                </div>
+                           </div>
+                        </div>
+                        <div class="footer-delivery">
+                            <div>
+                                <img src="./public/imgs/vnpost1.png" alt="">
+                            </div>
+                            <div>
+                                <img src="./public/imgs/ahamove_logo3.png" alt="">
+                            </div>
+                            <div>
+                                <img src="./public/imgs/icon_giao_hang_nhanh1.png" alt="">
+                            </div>
+                            <div>
+                                <img src="./public/imgs/icon_snappy1.png" alt="">
+                            </div>
+                            <div>
+                                <img src="./public/imgs/Logo_ninjavan.png" alt="">
+                            </div>
+                            <div>
+                                <img src="./public/imgs/vnpay_logo.png" alt="">
+                            </div>
+                            <div>
+                                <img src="./public/imgs/ZaloPay-logo-130x83.png" alt="">
+                            </div>
+                            <div>
+                                <img style="width: 30%;" src="./public/imgs/momopay.png" alt="">
+                            </div>
+                            <div>
+                                <img src="./public/imgs/shopeepay_logo.png" alt="">
+                            </div>
+                            <div>
+                                <img src="./public/imgs/logo_moca_120.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <span>Giấy chứng nhận Đăng ký Kinh doanh số 0304132047 do Sở Kế hoạch và Đầu tư Thành phố Hồ Chí Minh cấp ngày 20/12/2005, đăng ký thay đổi lần thứ 10, ngày 20/05/2022.</span>
+                </div>
             </div>
-        </div>
-        <div class="">
-            <button type="button" title="Thêm vào giỏ hàng" class="" style="padding: 15px 30px;color: red;border-radius: 10px;font-weight: bolder;">
-                <span>Thêm vào giỏ hàng</span>
-            </button>
-            <button type="button" title="Mua ngay" class="" style="padding: 15px 30px;background-color: red;border-radius: 10px;font-weight: bolder;color: white;">
-                <span>Mua ngay</span>
-            </button>
-        </div>
-        </div>
+        </footer>
     </div>
-    </div>
+    <script type="module" src="./public/js/homepage.js" ></script>
+    <script type="module" src="./public/js/detail.js" ></script>
+
 </body>
 </html>

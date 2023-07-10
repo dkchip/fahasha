@@ -3,27 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="../public/css/globalstyle.css">
-    <link rel="stylesheet" href="../public/css/homepage.css">
-    <link rel="stylesheet" href="../public/css/layout.css">
-    <link rel="stylesheet" href="../public/fontawesome/css/all.min.css">
-    <script type="module" src="../public/js/layout.js"></script>
+    <title>Tất cả sản phẩm</title>
+    <link rel="stylesheet" href="./public/css/globalstyle.css">
+    <link rel="stylesheet" href="./public/css/allProduct.css">
+    <link rel="stylesheet" href="./public/css/layout.css">
+    <link rel="stylesheet" href="./public/fontawesome/css/all.min.css">
+    <script type="module" src="./public/js/layout.js"></script>
+    <script type="text/javascript" src="./public/js/allProduct.js"></script>
+    <script type="module" src="./public/js/renderProduct.js"></script>
 </head>
 <body> 
     <div class="main">
         <header class="header">
             <div class="header-top-banner  " >
-                <img class="width-content" src="../public/imgs/banner-top.jpg" alt="">
+                <img class="width-content" src="./public/imgs/banner-top.jpg" alt="">
             </div>
             <div class="header-container">
                 <div class="header-inner width-content">
                     <div class="header-inner-left">
-                        <img src="../public//imgs/fahasa_logo.png" alt="">
+                        <a href="./index.html">
+                            <img src="../public/imgs/fahasa_logo.png" alt="">
+                        </a>
                     </div>
                     <div class="header-inner-center">
                         <div class="menu">
-                            <img src="../public/imgs/header_menu.png" alt="">
+                            <img src="./public/imgs/header_menu.png" alt="">
                             <div class="header-menu-category">
                                 <div class="menu-category-wrap">
                                     <div class="nav-category">
@@ -55,14 +59,14 @@
                                     </div>
                                     <div class="search-result-list">
                                         <a class="search-result-item" href="">
-                                            <img src="../public/imgs/books/sach-bai-tap-1.jpg" alt="">
+                                            <img src="./public/imgs/books/sach-bai-tap-1.jpg" alt="">
                                             <span>Sách bài tập </span>
                                         </a>
                                     </div>
                                 </div>
                                 <div class="featured-category-wrapper">
                                     <div class="featured-category-heading">
-                                        <img src="../public/imgs/header_menu.png" alt="">
+                                        <img src="./public/imgs/header_menu.png" alt="">
                                         <h4>Danh mục nổi bật</h4>
                                     </div>
                                     <div class="featured-category">
@@ -90,15 +94,107 @@
                             <i class="fa-regular fa-user"></i>
                             <span class="header-title">Tài khoản</span>
                         </div>
-                        <div class="languages"></div>
                     </div>
-                    
                 </div>
             </div>
         </header>
         <div class="body">
             <div class="container width-content">
-               
+                <!-- Write code here -->
+                <div class="breadcrumbs">
+                    <a href="">Home</a>
+                    <span>></span>
+                    <a href="./pages/all-category.html">Tất Cả Nhóm Sản Phẩm</a>
+                    <span>></span>
+                    <a href="">FOREIGN BOOKS</a>
+                </div>
+                <div class="container-inner">
+                    <div class="sidebar-left">
+                        <div class="sidebar-left-content">
+                            <div class="sidebar-left-row ">
+                                <h4 class="row-heading">Nhóm Sản Phẩm</h4>
+                                <div class="sidebar-left-nav">
+                                    <p class="">
+                                        <a href="./pages/all-category.html?type=all" style="text-decoration: none;color: black;">Tất cả sản phẩm</a>
+                                    </p>
+                                    <div class="sidebar-left-links">
+                                        <a  href="./sach-trong-nuoc.html?type=domestic">Sách Trong Nước</a>
+                                        <a class="active-link" href="./foreign-book.html?type=foreign">FOREIGN BOOKS</a>
+                                        <a href="./dung-cu-hoc-sinh.html?type=dungcu">Dụng Cụ Học Sinh</a>
+                                        <a href="./do-choi.html?type=toy">Đồ Chơi</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sidebar-left-row ">
+                                <h4 class="row-heading">Giá</h4>
+                                <div class="row-even row-even-price">
+                                    <div class="row-option">
+                                        <input onclick="test(this,0,150000)" value="ac" type="checkbox">
+                                        <label >0đ - 150,000đ</label>
+                                    </div>
+                                    <div class="row-option">
+                                        <input onclick="test(this,150000,300000)" type="checkbox">
+                                        <label for="">150,000đ - 300,000đ</label>
+                                    </div>
+                                    <div class="row-option">
+                                        <input onclick="test(this,300000,500000)" type="checkbox">
+                                        <label for="">300,000đ - 500,000đ</label>
+                                    </div>
+                                    <div class="row-option">
+                                        <input onclick="test(this,500000,750000)" type="checkbox">
+                                        <label for="">500,000đ - 750,000đ</label>
+                                    </div>
+                                    <div class="row-option">
+                                        <input onclick="test(this,750000,99999999)" type="checkbox">
+                                        <label for="">750,000đ - Trở lên</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="sidebar-left-row ">
+                                <h4 class="row-heading">Nơi Gia Công & Sản Xuất</h4>
+                                <div class="row-even row-even-production-site">
+                                    <div class="row-option">
+                                        <input onclick="test(this,0,150000)" value="ac" type="checkbox">
+                                        <label >Việt Nam</label>
+                                    </div>
+                                    <div class="row-option">
+                                        <input onclick="test(this,150000,300000)" type="checkbox">
+                                        <label for="">Trung Quốc</label>
+                                    </div>
+        
+                                </div>
+                            </div>
+                            <div class="sidebar-left-row ">
+                                <h4 class="row-heading">Cấp Học</h4>
+                                <div class="row-even row-even-school-level">
+                                    <div class="row-option ">
+                                        <input onclick="test(this,0,150000)" value="ac" type="checkbox">
+                                        <label >Mầm Non</label>
+                                    </div>
+                                    <div class="row-option">
+                                        <input onclick="test(this,150000,300000)" type="checkbox">
+                                        <label for="">Cấp 1</label>
+                                    </div>
+                                    <div class="row-option">
+                                        <input onclick="test(this,0,150000)" value="ac" type="checkbox">
+                                        <label >Cấp 2</label>
+                                    </div>
+                                    <div class="row-option">
+                                        <input onclick="test(this,150000,300000)" type="checkbox">
+                                        <label for="">Cấp 3</label>
+                                    </div>
+
+        
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="list-product">
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <footer class="footer  ">
@@ -117,12 +213,12 @@
                 </div>
                 <div class="footer-content">
                     <div class="footer-content-left">
-                        <img src="../public/imgs/fahasa_logo.png" alt="">
+                        <img src="./public/imgs/fahasa_logo.png" alt="">
                         <span>Lầu 5, 387-389 Hai Bà Trưng Quận 3 TP HCM</span>
                         <span>Công Ty Cổ Phần Phát Hành Sách TP HCM - FAHASA60 - 62 Lê Lợi, Quận 1, TP. HCM, Việt Nam</span>
                         <span>Fahasa.com nhận đặt hàng trực tuyến và giao hàng tận nơi.</span>
                         <span>KHÔNG hỗ trợ đặt mua và nhận hàng trực tiếp tại văn phòng cũng như tất cả Hệ Thống Fahasa trên toàn quốc.</span>
-                        <img  class="footer-content-img" src="../public/imgs/logo-bo-cong-thuong-da-thong-bao1.png" alt="">
+                        <img  class="footer-content-img" src="./public/imgs/logo-bo-cong-thuong-da-thong-bao1.png" alt="">
                         <div class="footer-icon">
                             <i class="fa-brands fa-facebook"></i>
                             <i class="fa-brands fa-square-instagram"></i>
@@ -132,8 +228,8 @@
                             <i class="fa-brands fa-pinterest"></i>
                         </div>
                         <div class="dowload-icon">
-                            <img src="../public/imgs/gg-play.png" alt="">
-                            <img src="../public/imgs/app-store.png" alt="">
+                            <img src="./public/imgs/gg-play.png" alt="">
+                            <img src="./public/imgs/app-store.png" alt="">
                         </div>
                     </div>
                     <div class="footer-content-right">
@@ -181,34 +277,34 @@
                         </div>
                         <div class="footer-delivery">
                             <div>
-                                <img src="../public/imgs/vnpost1.png" alt="">
+                                <img src="./public/imgs/vnpost1.png" alt="">
                             </div>
                             <div>
-                                <img src="../public/imgs/ahamove_logo3.png" alt="">
+                                <img src="./public/imgs/ahamove_logo3.png" alt="">
                             </div>
                             <div>
-                                <img src="../public/imgs/icon_giao_hang_nhanh1.png" alt="">
+                                <img src="./public/imgs/icon_giao_hang_nhanh1.png" alt="">
                             </div>
                             <div>
-                                <img src="../public/imgs/icon_snappy1.png" alt="">
+                                <img src="./public/imgs/icon_snappy1.png" alt="">
                             </div>
                             <div>
-                                <img src="../public/imgs/Logo_ninjavan.png" alt="">
+                                <img src="./public/imgs/Logo_ninjavan.png" alt="">
                             </div>
                             <div>
-                                <img src="../public/imgs/vnpay_logo.png" alt="">
+                                <img src="./public/imgs/vnpay_logo.png" alt="">
                             </div>
                             <div>
-                                <img src="../public/imgs/ZaloPay-logo-130x83.png" alt="">
+                                <img src="./public/imgs/ZaloPay-logo-130x83.png" alt="">
                             </div>
                             <div>
-                                <img style="width: 30%;" src="../public/imgs/momopay.png" alt="">
+                                <img style="width: 30%;" src="./public/imgs/momopay.png" alt="">
                             </div>
                             <div>
-                                <img src="../public/imgs/shopeepay_logo.png" alt="">
+                                <img src="./public/imgs/shopeepay_logo.png" alt="">
                             </div>
                             <div>
-                                <img src="../public/imgs/logo_moca_120.jpg" alt="">
+                                <img src="./public/imgs/logo_moca_120.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -219,7 +315,8 @@
             </div>
         </footer>
     </div>
-    <script type="module" src="../public/js/homepage.js" ></script>
+    <script type="module" src="./public/js/homepage.js" ></script>
+   
 
 </body>
 </html>

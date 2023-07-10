@@ -10,13 +10,16 @@ export const dataToys = [
         discount_precent: 40,
         supplier: "Cty CP SX & XNK DUKA",
         trademark : "Cresta",
-        brand_origin : 'Việt Nam',
+        origin : 'Việt Nam',
         production_site : "Việt Nam",
         color : "Nhiều màu",
         weight : 140,
         packaging_size: "35 x 22 x 9",
         school_level: 0,
-        lego : true 
+        lego : true,
+        age : "Mọi lứa tuổi",
+        author : "Không có",
+        language : "Không có"
     },
     {
         id : 201,
@@ -27,15 +30,18 @@ export const dataToys = [
         description : "Sản phẩm là mô hình các nhận vât trong bộ truyện tranh nổi tiếng One Piece siêu hot với đặc điểm dễ nhận biết. Bé và bạn sẽ thỏa sức lắp ghép theo trí tưởng tượng của mình hoặc dựa vào sách hướng dẫn sử dụng đi kèm theo. Bộ sản phẩm được làm từ chất liệu nhựa an toàn, tuyệt đối an toàn cho sức khỏe. Thêm vào đó, các chi tiết trong từng mảnh ghép cũng được cắt gọt cẩn thận để đảm bảo đôi tay của bé không bị trầy xước, tổn thương trong khi chơi.  Với bộ sản phẩm này, bé có thể phát huy khả năng tư duy và sáng tạo, rèn luyện tính kiên nhẫn, sự khéo léo, óc logic cũng như trí tưởng tượng của mình qua việc lắp ráp mô hình. Sản phẩm có thể làm phụ kiện trang trí bàn học, bàn làm việc.",    
         price: 100000 ,
         discount_precent: 25,
-        supplier: null,
+        supplier: "Trung Quốc",
         trademark : "LINKGO",
-        brand_origin : 'Trung Quốc',
+        origin : 'Trung Quốc',
         production_site : "Trung Quốc",
         color : "Nhiều màu",
         weight : 80,
         packaging_size: "8.5 x 8.5 x 8.5",
         school_level: 3,
-        lego : true 
+        lego : true,
+        age : "Mọi lứa tuổi",
+        author : "Không có",
+        language : "Không có"
     },
     {
         id : 202,
@@ -48,13 +54,16 @@ export const dataToys = [
         discount_precent: 40,
         supplier: "Cty CP SX & XNK DUKA",
         trademark : "Cresta",
-        brand_origin : 'Việt Nam',
+        origin : 'Việt Nam',
         production_site : "Việt Nam",
         color : "Nhiều màu",
         weight : 350,
         packaging_size: "38 x 26 x 10",
         school_level: 0,
-        lego : true 
+        lego : true,
+        age : "Mọi lứa tuổi",
+        author : "Không có",
+        language : "Không có"
     },
     {
         id : 203,
@@ -67,13 +76,16 @@ export const dataToys = [
         discount_precent: 15,
         supplier: "Việt Tinh Anh",
         trademark : "Lego",
-        brand_origin : 'Việt Nam',
+        origin : 'Việt Nam',
         production_site : "Việt Nam",
         color : "Nhiều màu",
         weight : 190,
         packaging_size: "19 x 14 x 4.5",
         school_level: 1,
-        lego : true 
+        lego : true,
+        age : "Mọi lứa tuổi",
+        author : "Không có",
+        language : "Không có"
     },
     {
         id : 204,
@@ -86,13 +98,16 @@ export const dataToys = [
         discount_precent: 25,
         supplier: "null",
         trademark : "OEM",
-        brand_origin : 'Trung Quốc',
+        origin : 'Trung Quốc',
         production_site : "Trung Quốc",
         color : "Nhiều màu",
         weight : 350,
         packaging_size: "29 x 24.5 x 9.5",
         school_level: 0,
-        lego : false 
+        lego : false,
+        age : "Mọi lứa tuổi",
+        author : "Không có",
+        language : "Không có"
     },
     {
         id : 205,
@@ -105,13 +120,16 @@ export const dataToys = [
         discount_precent: 25,
         supplier: "Cty Lâm Ngọc Việt",
         trademark : "YiQis",
-        brand_origin : 'Trung Quốc',
+        origin : 'Trung Quốc',
         production_site : "Trung Quốc",
         color : "Nhiều màu",
         weight : 185,
         packaging_size: "17 x 15 x 4",
         school_level: 0,
-        lego : false 
+        lego : false,
+        age : "Mọi lứa tuổi",
+        author : "Không có",
+        language : "Không có"
     },
     {
         id : 206,
@@ -124,13 +142,16 @@ export const dataToys = [
         discount_precent: 25,
         supplier: "Cty Lâm Ngọc Việt",
         trademark : "Decool",
-        brand_origin : 'Trung Quốc',
+        origin : 'Trung Quốc',
         production_site : "Trung Quốc",
         color : "Nhiều màu",
         weight : 55,
         packaging_size: "	12 x 7.5 x 6.5",
         school_level: 1,
-        lego : true 
+        lego : true,
+        age : "Mọi lứa tuổi",
+        author : "Không có",
+        language : "Không có"
     },
     {
         id : 207,
@@ -143,12 +164,15 @@ export const dataToys = [
         discount_precent: 25,
         supplier: "Cty Đồ Chơi An Toàn Việt",
         trademark : "Anto",
-        brand_origin : 'Việt Nam',        
+        origin : 'Việt Nam',        
         production_site : "Việt Nam",        
         color : "Nhiều màu",
         weight : 400,
         packaging_size: "12 x 7.5 x 6.5",
         school_level: 0,
-        lego : false 
+        lego : false,
+        age : "Mọi lứa tuổi",
+        author : "Không có",
+        language : "Không có"
     },
 ]
