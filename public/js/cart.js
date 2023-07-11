@@ -164,6 +164,6 @@ removeCartEl.forEach((el) => {
     el.addEventListener("click",(e) => {
         const idProduct = el.getAttribute("id-product");
         remove(Number.parseInt(idProduct))
-        window.location.href.reload()
+        window.location.reload()
     })
 })
