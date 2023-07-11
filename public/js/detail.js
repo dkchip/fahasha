@@ -12,8 +12,9 @@ const containerDetailEl = $$(".container-detail")
 let count = 1;
 
 // get  Params
-const queryString = window.location.href.search;
+const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
+
 const id = urlParams.get('id');
 let dataProduct = {};
 

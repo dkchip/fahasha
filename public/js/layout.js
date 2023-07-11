@@ -215,5 +215,5 @@ if(btnLogoutEl){
 
 }
 
-console.log(window.location)
+
 
