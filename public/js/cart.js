@@ -37,7 +37,6 @@ if(!logind.status || logind.dataUser.cart.length === 0) {
     let dataCarts = logind.dataUser.cart;
     htmlProduct = dataCarts.map((el) => {
         priceTotalProduct += ((el.price - (el.price/100 * el.discount_precent)) * el.count);
-        console.log()
         return `
             <div class="item-product-cart" >
                 <div class="img-product-cart" >

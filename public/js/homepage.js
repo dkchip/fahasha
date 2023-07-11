@@ -163,7 +163,6 @@ const renderTextbook = (id) => {
           newDataTextbooks = []
           newDataTextbooks = dataTextbooks.filter((el) => {
               if(el.school_level.toString() === id) {
-                  console.log(el.school_level)
                   return el
               }
           });
@@ -172,7 +171,6 @@ const renderTextbook = (id) => {
           newDataTextbooks = []
           newDataTextbooks = dataTextbooks.filter((el) => {
               if(el.school_level.toString() === id) {
-                  console.log(el.school_level)
                   return el
               }
           });
@@ -181,7 +179,6 @@ const renderTextbook = (id) => {
         newDataTextbooks = []
         newDataTextbooks = dataTextbooks.filter((el) => {
             if(el.school_level.toString() === id) {
-                console.log(el.school_level)
                 return el
             }
         });
