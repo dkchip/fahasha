@@ -35,7 +35,7 @@ let htmlNavLink = "";
 
 const handeleSeach = () => {
   const searchValue = $$(".search>input").value;
-  window.location.href = `all-category.html?type=all&search=${searchValue}`
+  window.location.href = `./all-category.html?type=all&search=${searchValue}`
 }
 
  $$(".search>input").addEventListener("keydown", (e) => {
@@ -192,15 +192,15 @@ if(logind.status){
   headerTitleEl.innerHTML = logind.dataUser.name
 
   accountDropdownEl.innerHTML = `    
-  <a href="/cart.html" class="link-cart">Đơn hàng của tôi</a>
+  <a href="./cart.html" class="link-cart">Đơn hàng của tôi</a>
   <a  class="link-logout">Đăng Xuất</a>
             `
  
 }else{
   headerTitleEl.innerText = "Tài khoản"
   accountDropdownEl.innerHTML = `    
-                    <a href="login.html" class="link-login">Đăng nhập</a>
-                    <a href="register.html" class="link-register">Đăng ký</a
+                    <a href="./login.html" class="link-login">Đăng nhập</a>
+                    <a href="./register.html" class="link-register">Đăng ký</a
             `
 }
 
@@ -210,7 +210,7 @@ if(btnLogoutEl){
     logind.status = false;
     logind.dataUser = {}
     localStorage.setItem("logind",JSON.stringify(logind))
-    window.location.href = "index.html"
+    window.location.href = "./index.html"
   })
 
 }

@@ -189,6 +189,6 @@ btnAddCartEl.addEventListener('click',(e) => {
             localStorage.setItem("usersInfo",JSON.stringify(usersInfo));
 
         }
-        window.location.href = "cart.html"
+        window.location.href = "./cart.html"
     }
 })
