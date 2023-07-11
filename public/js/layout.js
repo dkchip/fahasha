@@ -188,14 +188,23 @@ searchInputEl.addEventListener('input',(e) => {
     }
 })
 
-if(logind.status){
-  headerTitleEl.innerHTML = logind.dataUser.name
 
-  accountDropdownEl.innerHTML = `    
-  <a href="./cart.html" class="link-cart">Đơn hàng của tôi</a>
-  <a  class="link-logout">Đăng Xuất</a>
-            `
- 
+if(logind){
+  if(logind.status){
+    headerTitleEl.innerHTML = logind.dataUser.name
+  
+    accountDropdownEl.innerHTML = `    
+    <a href="./cart.html" class="link-cart">Đơn hàng của tôi</a>
+    <a  class="link-logout">Đăng Xuất</a>
+              `
+   
+  }else{
+    headerTitleEl.innerText = "Tài khoản"
+    accountDropdownEl.innerHTML = `    
+                      <a href="./login.html" class="link-login">Đăng nhập</a>
+                      <a href="./register.html" class="link-register">Đăng ký</a
+              `
+  }
 }else{
   headerTitleEl.innerText = "Tài khoản"
   accountDropdownEl.innerHTML = `    
