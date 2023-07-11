@@ -75,8 +75,8 @@ const renderProduct = (param,type,search) => {
     html = newProduct.slice(0,24).map((el,index) => {
         return `
             <div class="product-item">
-                <a href="../detail.html?id=${el.id}">
-                    <img src=.${el.image} alt="">
+                <a href="./detail.html?id=${el.id}">
+                    <img src=${el.image} alt="">
                     <div class="product-info">
                         <span class="product-title">${el.title}</span>
                         <span class="product-price">${(el.price - el.price/100*el.discount_precent).toLocaleString().replace(",",".")} đ</span>
