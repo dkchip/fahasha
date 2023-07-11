@@ -47,7 +47,7 @@ const handleRegister = async (email,password,rePassword,userName) => {
             localStorage.setItem('accounts',JSON.stringify(dataUsers))
             localStorage.setItem("usersInfo", JSON.stringify(dataUsersInfos))
             alert("Đăng kí thành công");
-            window.location.href = "/login.html"
+            window.location.href = "login.html"
             
             
         }else{
