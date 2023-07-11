@@ -12,7 +12,7 @@ const containerDetailEl = $$(".container-detail")
 let count = 1;
 
 // get  Params
-const queryString = window.location.search;
+const queryString = window.location.href.search;
 const urlParams = new URLSearchParams(queryString);
 const id = urlParams.get('id');
 let dataProduct = {};
@@ -189,6 +189,6 @@ btnAddCartEl.addEventListener('click',(e) => {
             localStorage.setItem("usersInfo",JSON.stringify(usersInfo));
 
         }
-        window.location = "/cart.html"
+        window.location.href = "/cart.html"
     }
 })

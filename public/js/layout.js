@@ -35,7 +35,7 @@ let htmlNavLink = "";
 
 const handeleSeach = () => {
   const searchValue = $$(".search>input").value;
-  window.location = `/all-category.html?type=all&search=${searchValue}`
+  window.location.href = `/all-category.html?type=all&search=${searchValue}`
 }
 
  $$(".search>input").addEventListener("keydown", (e) => {
@@ -210,7 +210,7 @@ if(btnLogoutEl){
     logind.status = false;
     logind.dataUser = {}
     localStorage.setItem("logind",JSON.stringify(logind))
-    window.location = "/index.html"
+    window.location.href = "/index.html"
   })
 
 }

@@ -9,7 +9,7 @@ const $$$ = (el) => {
 let logind = JSON.parse(localStorage.getItem("logind"));
 
 if(logind.status){
-  window.location = "/index.html"
+  window.location.href = "/index.html"
 }
 
   
@@ -46,7 +46,7 @@ const handleLogin = (email,password) => {
     localStorage.setItem('logind', JSON.stringify(logind))
 
     alert("Đăng nhập thành công!")
-    window.location = "/index.html"
+    window.location.href = "/index.html"
   }else{
     alert("Sai tk hoặc mật khẩu")
   }
