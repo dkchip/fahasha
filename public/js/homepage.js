@@ -11,42 +11,6 @@ const $$$ = (el) => {
   return document.querySelectorAll(el);
 };
 
-const accountLocal = localStorage.getItem('accounts')
-const logindLocal = localStorage.getItem('logind')
-if(!accountLocal){
-  let user = [
-        {
-            "id" : 1,
-            "name" : "hoang viet",
-            "cart" : [
-            ]
-        }
-    ]
-    localStorage.setItem("usersInfo", JSON.stringify(user))
-
-
-    let account = [
-        {
-            "id" : 1,
-            "email" : "admin@gmail.com",
-            "password" : 123123
-        }
-    ]
-
-    localStorage.setItem("accounts", JSON.stringify(account))
-}
-
-if(!logindLocal){
-  let logind = {
-    status : false,
-    dataUser : {
-
-    }
-  }
-
-  localStorage.setItem("logind", JSON.stringify(logind))
-
-}
 
 // Get element HTML
 const categogyEl = $$(".category-product-list");
@@ -314,7 +278,7 @@ const renderForeign = (id) => {
     
     }
 
-    htmlProduct = renderCategoryTabItem(newDataForeign)
+    htmlProduct = renderCategoryTabItem(newDataForeign.slice(0,4))
     forgeinProductEl.innerHTML = htmlProduct;
     };
 

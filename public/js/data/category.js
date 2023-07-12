@@ -2,7 +2,7 @@ export const dataCategory = [
     {
         id : 1,
         title : "Sách Trong Nước",
-        image : "./public/imgs/categorys/calculator.jpg",
+        image : "./public/imgs/categorys/sach-trong-nuoc.jpg",
         path : "./sach-trong-nuoc.html?type=domestic",
         icon : `<i class="fa-solid fa-book" style="color: #f9584f;"></i>`,
         dataAll : [
@@ -78,7 +78,7 @@ export const dataCategory = [
     {
         id : 2,
         title : "FOREIGN BOOKS",
-        image : "./public/imgs/categorys/toys.jpg",
+        image : "./public/imgs/categorys/foreign.jpg",
         path : "./foreign-book.html?type=foreign",
         icon : `<i class="fa-solid fa-earth-americas" style="color: #8d81fc;"></i>`,
 
@@ -152,7 +152,7 @@ export const dataCategory = [
     {
         id : 3,
         title : "Dụng Cụ Học Sinh",
-        image : "./public/imgs/categorys/ngon-tinh-dam-mi.jpg",
+        image : "./public/imgs/categorys/calculator.jpg",
         path : "./dung-cu-hoc-sinh.html?type=dungcu",
         icon : `<i class="fa-sharp fa-solid fa-pen-to-square" style="color: #44a5f7;"></i>`,
 
@@ -230,7 +230,7 @@ export const dataCategory = [
     {
         id : 4,
         title : "Đồ Chơi",
-        image : "./public/imgs/categorys/sach-hoc-ngoai-ngu.jpg",
+        image : "./public/imgs/categorys/toys.jpg",
         path : "./do-choi.html?type=toy",
         icon : `<i class="fa-solid fa-car-side" style="color: #fabb43;"></i>`,
         dataAll : [
@@ -299,6 +299,152 @@ export const dataCategory = [
                 ]
             }
         ]
+    },
+    {
+        id : 5,
+        title : "Sách Học Ngoại Ngữ",
+        image : "./public/imgs/categorys/sach-hoc-ngoai-ngu.jpg",
+        path : "./",
+        icon : `<i class="fa-solid fa-car-side" style="color: #fabb43;"></i>`,
+        // dataAll : [
+        //     {
+        //         title : "ĐỒ CHƠI NỔI BẬT",
+        //         data : [
+        //             {
+        //                 name : "Xếp Hình - Lắp Ghép",
+        //             },
+        //             {
+        //                 name : "Đồ Chơi Giáo Dục",
+        //             },
+        //             {
+        //                 name : "Đồ Chơi Điều Khiển",
+        //             },
+        //             {
+        //                 name : "Board Game",
+        //             }
+        //         ]
+        //     },
+        //     {
+        //         title : "PHƯƠNG TIỆN CÁC LOẠI",
+        //         data : [
+        //             {
+        //                 name : "Ô Tô",
+        //             },
+        //             {
+        //                 name : "Máy Bay",
+        //             },
+        //             {
+        //                 name : "Tàu Hỏa",
+        //             },
+        //             {
+        //                 name : "Phương Tiện Khác",
+        //             }
+        //         ]
+        //     },
+        //     {
+        //         title : "MÔ HÌNH ",
+        //         data : [
+        //             {
+        //                 name : "Mô Hình Giấy",
+        //             },
+        //             {
+        //                 name : "Mô Hình Gỗ",
+        //             },
+        //             {
+        //                 name : "Mô Hình Nhân Vật",
+        //             }
+        //         ]
+        //     }, {
+        //         title : "ĐỒ CHƠI KHÁC",
+        //         data : [
+        //             {
+        //                 name : "Bột Nặn",
+        //             },
+        //             {
+        //                 name : "Búp Bê",
+        //             },
+        //             {
+        //                 name : "Thú Bông",
+        //             },
+        //             {
+        //                 name : "Hướng Nghiệp Nhập Vai",
+        //             }
+        //         ]
+        //     }
+        // ]
+    },
+    {
+        id : 6,
+        title : "Tiểu Thuyết",
+        image : "./public/imgs/categorys/tieu-thuyet.jpg",
+        path : "./",
+        icon : `<i class="fa-solid fa-car-side" style="color: #fabb43;"></i>`,
+        // dataAll : [
+        //     {
+        //         title : "ĐỒ CHƠI NỔI BẬT",
+        //         data : [
+        //             {
+        //                 name : "Xếp Hình - Lắp Ghép",
+        //             },
+        //             {
+        //                 name : "Đồ Chơi Giáo Dục",
+        //             },
+        //             {
+        //                 name : "Đồ Chơi Điều Khiển",
+        //             },
+        //             {
+        //                 name : "Board Game",
+        //             }
+        //         ]
+        //     },
+        //     {
+        //         title : "PHƯƠNG TIỆN CÁC LOẠI",
+        //         data : [
+        //             {
+        //                 name : "Ô Tô",
+        //             },
+        //             {
+        //                 name : "Máy Bay",
+        //             },
+        //             {
+        //                 name : "Tàu Hỏa",
+        //             },
+        //             {
+        //                 name : "Phương Tiện Khác",
+        //             }
+        //         ]
+        //     },
+        //     {
+        //         title : "MÔ HÌNH ",
+        //         data : [
+        //             {
+        //                 name : "Mô Hình Giấy",
+        //             },
+        //             {
+        //                 name : "Mô Hình Gỗ",
+        //             },
+        //             {
+        //                 name : "Mô Hình Nhân Vật",
+        //             }
+        //         ]
+        //     }, {
+        //         title : "ĐỒ CHƠI KHÁC",
+        //         data : [
+        //             {
+        //                 name : "Bột Nặn",
+        //             },
+        //             {
+        //                 name : "Búp Bê",
+        //             },
+        //             {
+        //                 name : "Thú Bông",
+        //             },
+        //             {
+        //                 name : "Hướng Nghiệp Nhập Vai",
+        //             }
+        //         ]
+        //     }
+        // ]
     },
    
 ]

@@ -1,6 +1,8 @@
 .product-detail-wrap{
     display: flex;
     flex-direction: column;
+    background-color: var(--bgr-white-color);
+    border-radius: 8px;
 }
 
 .product-detail{
@@ -29,6 +31,7 @@
 }
 
 .product-supplier{
+    margin-top: 30px;
     padding-right: 80px;
     display: flex;  
     justify-content: space-between;
@@ -38,7 +41,11 @@
 .product-detail-price{
     display: flex;
     align-items: center;
-    margin-bottom: 14px;
+    margin: 20px 0;
+}
+
+.product-detail-price span {
+    margin-right: 14px;
 }
 
 .product-detail-original-price{
@@ -76,6 +83,7 @@
 }
 
 .product-quantity{
+    margin-top: 24px;
     display: flex;
 }
 
@@ -100,7 +108,7 @@
 }
 
 .product-btn{
-    padding: 16px 60px;
+    padding: 16px 60px 16px 12px;
 }
 
 .product-btn button {
@@ -136,12 +144,85 @@
  
 }
 
-.table-info tr{
+.table-info tr td{
+    padding: 4px 0;
+}
 
+.endow{
+    margin: 10px 0;
+    background-color: var(--bgr-white-color);
+    border-radius: 8px;
+    padding: 12px 20px;
+}
+
+.voucher-list{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0 4px 0;
+}
+
+.voucher-item{
+    display: flex;
+    width: 32%;
+    padding: 8px 4px;
+    border-radius: 6px;
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.voucher-icon{
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    background-color: #48a7f8;
+}
+
+
+.voucher-icon i{
+    font-size: 2.4rem;
+}
+
+.voucher-info{
+    width: calc(100% - 66px);
+    margin-left: 6px;
+}
+.voucher-info h4{
+    display:-webkit-box;
+    margin: 6px 0;
+    -webkit-line-clamp:1; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+
+.voucher-info span{
+    margin-top: 4px;
+    font-size: 1.4rem;
+    color: #7A7E7F;
+    display:-webkit-box;
+    -webkit-line-clamp:2; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
 }
 
 .product-description span{
     display: block;
      padding: 12px 0;
 
+}
+
+.endow-heading{
+    display: flex;
+    align-items: center;
+    padding: 0 0 4px 0;
+    border-bottom:1px solid #ccc ;
+}
+
+.endow-heading h3{
+    margin-left: 6px;
 }

@@ -33,16 +33,16 @@ const renderHtmlProduct = (id) => {
                 <div class="product-detail-preview">
                     <h3 class="product-detail-title">${dataProduct.title}</h3>
                     <div class="product-supplier">
-                        <span>Nhà Cung Cấp :${dataProduct.supplier}</span>
-                        <span>Thương Hiệu : ${dataProduct.trademark}</span>
+                        <span>Nhà Cung Cấp :<b>${dataProduct.supplier}</b></span>
+                        <span>Thương Hiệu : <b>${dataProduct.trademark}</b></span>
                     </div>
                     <div class="product-supplier">
-                        <span>Xuất Xứ : ${dataProduct.origin}</span>
+                        <span>Xuất Xứ : <b>${dataProduct.origin}</b></span>
                     </div>
                     <div class="product-detail-price">
                         <span class="product-detail-original-price">${(dataProduct.price - dataProduct.price / 100 * dataProduct.discount_precent).toLocaleString().replace(",", ".")}đ
                         </span>
-                        <span class="product-detail-discount-price">${dataProduct.price}</span>
+                        <span class="product-detail-discount-price">${dataProduct.price} đ</span>
                         <span class="percent">-${dataProduct.discount_precent}%</span>
                     </div>
                     <div class="delivery-time">
@@ -76,6 +76,50 @@ const renderHtmlProduct = (id) => {
             </div>
         </div>
 
+        <div class = "endow width-content">
+            <div class="endow-heading">
+                 <i class="fa-solid fa-ticket" style="color: #c92127;"></i>
+                 <h3>Ưu đãi liên quan</h3>
+            </div>
+            <div class="endow-content">
+                <div class="voucher-list">
+                    <div class="voucher-item">
+                        <div class="voucher-icon">
+                            <i class="fa-solid fa-credit-card" style="color: #fcfcfd;"></i>
+                        </div>
+                        <div class="voucher-info">
+                            <h4>ZALOPAY: GIẢM 20k CHO ĐƠN HÀNG TỪ 400K</h4>
+                            <span>
+                                
+                                Thanh toán bằng Zalopay, giảm ngay 20K cho đơn hàng từ 400K                                    
+                            </span>
+                        </div>
+                    </div>
+                    <div class="voucher-item">
+                        <div class="voucher-icon">
+                            <i class="fa-solid fa-credit-card" style="color: #fcfcfd;"></i>
+                        </div>
+                        <div class="voucher-info">
+                            <h4>VNPAY: GIẢM 10% - TỐI ĐA 20K CHO ĐH TỪ 0Đ</h4>
+                            <span>
+                                Nhập mã "QRFHS20": Giảm 10% cho đơn hàng từ 150K - Nhập mã tại VNPAY                                           
+                            </span>
+                        </div>
+                    </div>
+                    <div class="voucher-item">
+                        <div class="voucher-icon">
+                            <i class="fa-solid fa-credit-card" style="color: #fcfcfd;"></i>
+                        </div>
+                        <div class="voucher-info">
+                            <h4>POTICO.VN: HOA VÀ QUÀ GỬI NGƯỜI THƯƠNG - nhận ngay ưu đãi giảm 80K cho đh từ 299K khi mua sắm tại Potico.vn.</h4>
+                            <span>
+                                Khách hàng khi mua sắm tại Fahasa.com và app Fahasa với giá trị đơn hàng từ 100k trở lên nhận ngay E-Voucher giảm giá tại Potico.vn                                    
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container width-content" style="background-color: white;font-size: 14px;border-radius: 10px;">
             <p style="font-weight: bolder;font-size: 24px;padding: 6px;">Thông tin sản phẩm</p>
             <table class="table-info" style="padding: 8px 8px;">
@@ -129,6 +173,26 @@ const renderHtmlProduct = (id) => {
 
 renderHtmlProduct(id);
 
+
+
+const toastMessage = (message,duration = 1000) => {
+    const mainEl = $$(".main")
+    const newToast = document.createElement("div")  
+    newToast.classList.add("toast")
+    let htmlToast = `<span>${message}</span>`
+    newToast.innerHTML = htmlToast
+  
+  
+    mainEl.appendChild(newToast);
+    let timerId  = setTimeout(() => {
+      mainEl.removeChild(newToast);
+    },duration)
+  
+    return () => {
+      clearTimeout(timerId)
+    }
+  }
+
 const iconMinusEl = $$(".icon-minus")
 const iconPlusEl = $$(".icon-plus")
 const btnAddCartEl = $$(".btn-cart")
@@ -153,7 +217,7 @@ iconPlusEl.addEventListener("click",() =>{
 btnAddCartEl.addEventListener('click',(e) => {
     if(!status){
         e.preventDefault()
-        alert("Đăng nhập để sử dụng chức năng này")
+        toastMessage("Đăng nhập để sử dụng chức năng này !",1000)
     }else{
         e.preventDefault()
         

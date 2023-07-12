@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Đăng kí</title>
     <link rel="stylesheet" href="./public/css/globalstyle.css">
     <link rel="stylesheet" href="./public/css/register.css">
     <link rel="stylesheet" href="./public/css/layout.css">
     <link rel="stylesheet" href="./public/fontawesome/css/all.min.css">
+    <link rel="icon" href="./public/imgs/favicon4.ico" type="image/x-icon">
+
     <script type="module" src="./public/js/layout.js"></script>
 </head>
 <body> 
@@ -111,19 +113,23 @@
                         </div>
                         <div class="form-row">
                             <label for="email">Số điện thoại/Email</label><br>
-                            <input id="email" class="input-email" type="text" name="username"> <br>
+                            <input id="email" class="input-email" type="text" name="email"> <br>
+                            <span class="span-email"></span>
                         </div>
                         <div class="form-row">
                             <label for="username">Tên người dùng</label><br>
                             <input id="username" class="input-username" type="text" name="username"> <br>
+                            <span class="span-username"></span>
                         </div>
                         <div class="form-row">
                             <label for="password">Mật khẩu</label><br>
                             <input id="password" class="input-password" type="password" name="password"> <br>
+                            <span class="span-password"></span>
                         </div>
                         <div class="form-row">
                             <label for="repassword">Nhập lại mật khẩu</label><br>
-                            <input id="repassword" class="input-re-password"  type="password" name="rePassword"> <br>
+                            <input id="repassword" class="input-repassword"  type="password" name="rePassword"> <br>
+                            <span class="span-repassword"></span>
                         </div>
                         
                         <div class="row">
@@ -144,7 +150,7 @@
                         </div>
                         <div class="footer-top-right">
                             <input type="text" name="" id="" placeholder="Nhập địa chỉ email của bạn">
-                            <button>Đăng ký</button>
+                            <button ">Đăng ký</button>
                         </div>
                     </div>
                 </div>

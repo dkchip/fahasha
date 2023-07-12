@@ -9,8 +9,8 @@ const $$ = (el) => {
 const $$$ = (el) => {
   return document.querySelectorAll(el);
 };
-
-let logind = JSON.parse(localStorage.getItem("logind"));
+const accountLocal = JSON.parse(localStorage.getItem('accounts'))
+const logindLocal = JSON.parse(localStorage.getItem('logind'))
 // Get element
 const navLinkEl = $$(".nav-links");
 const menuHeaderEl = $$(".menu");
@@ -27,8 +27,76 @@ const accountDropdownEl = $$(".account-dropdown");
 const headerTitleEl = $$(".account>.header-title");
 const searchBtnEl = $$(".search-btn");
 
-// Render nav link
-let htmlNavLink = "";
+
+
+
+
+
+if(!accountLocal){
+  let user = [
+        {
+            "id" : 1,
+            "name" : "hoang viet",
+            "cart" : [
+            ]
+        }
+    ]
+    localStorage.setItem("usersInfo", JSON.stringify(user))
+
+
+    let account = [
+        {
+            "id" : 1,
+            "email" : "admin@gmail.com",
+            "password" : 123123
+        }
+    ]
+
+    localStorage.setItem("accounts", JSON.stringify(account))
+}
+
+if(!logindLocal){
+  let logind = {
+    status : false,
+    dataUser : {
+
+    }
+  }
+
+  headerTitleEl.innerText = "Tài khoản"
+  accountDropdownEl.innerHTML = `    
+                    <a href="./login.html" class="link-login">Đăng nhập</a>
+                    <a href="./register.html" class="link-register">Đăng ký</a
+            `
+  localStorage.setItem("logind", JSON.stringify(logind))
+
+}else{
+
+  
+    if(logindLocal.status){
+      headerTitleEl.innerHTML = logindLocal.dataUser.name
+    
+      accountDropdownEl.innerHTML = `    
+      <a href="./cart.html" class="link-cart">Đơn hàng của tôi</a>
+      <a  class="link-logout">Đăng Xuất</a>
+                `
+     
+    }else{
+      headerTitleEl.innerText = "Tài khoản"
+      accountDropdownEl.innerHTML = `    
+                        <a href="./login.html" class="link-login">Đăng nhập</a>
+                        <a href="./register.html" class="link-register">Đăng ký</a
+                `
+    }
+
+
+  
+
+}
+
+
+
+
 
 
 // handle search\
@@ -48,6 +116,9 @@ searchBtnEl.addEventListener("click", () =>{
   handeleSeach()
   
 })
+
+// Render nav link
+let htmlNavLink = "";
 
 htmlNavLink = dataCategory.map((el,i) => {
     return `<a id-data = ${el.id} href=${el.path}> ${el.title}</a>`
@@ -188,37 +259,14 @@ searchInputEl.addEventListener('input',(e) => {
     }
 })
 
-
-if(logind){
-  if(logind.status){
-    headerTitleEl.innerHTML = logind.dataUser.name
-  
-    accountDropdownEl.innerHTML = `    
-    <a href="./cart.html" class="link-cart">Đơn hàng của tôi</a>
-    <a  class="link-logout">Đăng Xuất</a>
-              `
-   
-  }else{
-    headerTitleEl.innerText = "Tài khoản"
-    accountDropdownEl.innerHTML = `    
-                      <a href="./login.html" class="link-login">Đăng nhập</a>
-                      <a href="./register.html" class="link-register">Đăng ký</a
-              `
-  }
-}else{
-  headerTitleEl.innerText = "Tài khoản"
-  accountDropdownEl.innerHTML = `    
-                    <a href="./login.html" class="link-login">Đăng nhập</a>
-                    <a href="./register.html" class="link-register">Đăng ký</a
-            `
-}
+// Handle logout
 
 const btnLogoutEl = $$(".link-logout")
 if(btnLogoutEl){
   btnLogoutEl.addEventListener("click", () =>{
-    logind.status = false;
-    logind.dataUser = {}
-    localStorage.setItem("logind",JSON.stringify(logind))
+    logindLocal.status = false;
+    logindLocal.dataUser = {}
+    localStorage.setItem("logind",JSON.stringify(logindLocal))
     window.location.href = "./index.html"
   })
 

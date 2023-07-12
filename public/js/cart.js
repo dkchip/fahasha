@@ -40,7 +40,7 @@ if(!logind.status || logind.dataUser.cart.length === 0) {
         return `
             <div class="item-product-cart" >
                 <div class="img-product-cart" >
-                    <a class="product-image" href="./detail.html">
+                    <a class="product-image" href="./detail.html?id=${el.product_id}">
                         <img src=${el.image} >
                     </a>
                 </div>
