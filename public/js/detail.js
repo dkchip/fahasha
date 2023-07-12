@@ -5,19 +5,19 @@ const $$ = (el) => {
   };
   
 const status = JSON.parse(localStorage.getItem("logind")).status
-// Get Element
-
+// Lấy thẻ
 const containerDetailEl = $$(".container-detail")
 
 let count = 1;
 
-// get  Params
+// Lấy  Params trên url
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 
 const id = urlParams.get('id');
 let dataProduct = {};
 
+// Render chi tiết sản phẩm
 const renderHtmlProduct = (id) => {
     dataProductAll.forEach((el) => {
         if(el.id.toString() == id){
@@ -196,6 +196,7 @@ const toastMessage = (message,duration = 1000) => {
 const iconMinusEl = $$(".icon-minus")
 const iconPlusEl = $$(".icon-plus")
 const btnAddCartEl = $$(".btn-cart")
+const btnBuyEl = $$(".btn-buy")
 iconMinusEl.addEventListener("click",() =>{
     if(count !== 1){
         const productCountEl = $$(".product-count");
@@ -213,8 +214,9 @@ iconPlusEl.addEventListener("click",() =>{
 
 })
 
+// Xử lí thêm vào giỏ hàng
 
-btnAddCartEl.addEventListener('click',(e) => {
+const handleAddCart = (e) => {
     if(!status){
         e.preventDefault()
         toastMessage("Đăng nhập để sử dụng chức năng này !",1000)
@@ -256,4 +258,7 @@ btnAddCartEl.addEventListener('click',(e) => {
         }
         window.location.href = "./cart.html"
     }
-})
+}
+
+btnBuyEl.addEventListener("click",handleAddCart)
+btnAddCartEl.addEventListener('click',handleAddCart)

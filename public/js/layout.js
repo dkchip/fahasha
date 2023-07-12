@@ -9,9 +9,12 @@ const $$ = (el) => {
 const $$$ = (el) => {
   return document.querySelectorAll(el);
 };
+
+
 const accountLocal = JSON.parse(localStorage.getItem('accounts'))
 const logindLocal = JSON.parse(localStorage.getItem('logind'))
-// Get element
+
+// Lấy thẻ HTML
 const navLinkEl = $$(".nav-links");
 const menuHeaderEl = $$(".menu");
 
@@ -31,7 +34,7 @@ const searchBtnEl = $$(".search-btn");
 
 
 
-
+//  Kiểm tra đăng nhập
 if(!accountLocal){
   let user = [
         {
@@ -99,7 +102,7 @@ if(!logindLocal){
 
 
 
-// handle search\
+// Xử lí tìm kiếm
 
 const handeleSeach = () => {
   const searchValue = $$(".search>input").value;
@@ -117,17 +120,17 @@ searchBtnEl.addEventListener("click", () =>{
   
 })
 
-// Render nav link
+// Render nav 
 let htmlNavLink = "";
 
-htmlNavLink = dataCategory.map((el,i) => {
+htmlNavLink = dataCategory.slice(0,4).map((el,i) => {
     return `<a id-data = ${el.id} href=${el.path}> ${el.title}</a>`
 })
 
 navLinkEl.innerHTML = htmlNavLink.join("");
 
 
-// Handle Render Data Menu Category When Hover
+// Xử lí Render danh mục con khi Hover nav
 const handleRenderData = (el) =>{
   dataCategory.forEach((item) => {
     let html = "";
@@ -168,8 +171,7 @@ navLinkListEl.forEach((el) => {
 
 handleRenderData(dataCategory[0].id.toString())
 
-
-// Show - Hide search results
+// Ản hiện kết mục kết quả
 searchInputEl.addEventListener("click", () => {
   searchResults.classList.add("show")
 })
@@ -188,7 +190,7 @@ menuHeaderEl.addEventListener('mouseover',() => {
 
 })
 
-// Render featured category list link elment
+// Render danh mục nổi bật
 const renderFeatureCategory =  () => {
   let html = '';
   html = dataCategory.map((el,index) => { 
@@ -207,7 +209,7 @@ const renderFeatureCategory =  () => {
 
 renderFeatureCategory();
 
-// Render results item
+// Render kết quả tìm kiếm
 
 const debounce = (fn, delay = 1000) => {
   let timerId = null;
@@ -259,7 +261,7 @@ searchInputEl.addEventListener('input',(e) => {
     }
 })
 
-// Handle logout
+// Xử lí đăng xuất
 
 const btnLogoutEl = $$(".link-logout")
 if(btnLogoutEl){

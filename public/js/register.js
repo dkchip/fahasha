@@ -159,15 +159,15 @@ inputEl.forEach((el) => {
         const valuePassword = inputPassword.value.trim();
         const valueRePassword = inputRePassword.value.trim();
         const valueUsername = inputUsername.value
-        // Check email
+        // Kiểm tra Email
         let emailCheck = ValidateEmail(valueEmail);
         if(emailCheck){
-            // Check Username
+            // Kiểm tra tên người dùng
             if(valueUsername === ""){
                 inputUsername.classList.add("bd-color");
                 spanUsername.innerHTML = "Không được để ô trống !"
             }else{
-                // Check length Password
+                // Kiểm tra độ dài mật khẩu
                 if(valuePassword.length < 6){
                     inputPassword.classList.add("bd-color");
                      spanPassword.innerHTML = "Mật khẩu ít nhất 6 kí tự !"

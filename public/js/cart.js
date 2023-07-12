@@ -10,9 +10,38 @@ return document.querySelectorAll(el);
 const cartContentEl = $$(".cart-ui-content");
 
 let logind = JSON.parse(localStorage.getItem("logind"));
-// let logind = JSON.parse(localStorage.getItem("logind"));
+
+let dataCarts = logind.dataUser.cart;
 
 
+// Xử lí thay đổi sổ lượng sản phẩm trong giỏ hàng
+function changeQuantity(type,productId){
+    const usersInfo = JSON.parse(localStorage.getItem("usersInfo"));
+    let indexProduct = logind.dataUser.cart.findIndex((el) => {
+        return el.product_id === productId
+    })
+
+    let indexUser = usersInfo.findIndex((el) => {
+    
+        return el.id === logind.dataUser.id;
+    })
+
+    let count = logind.dataUser.cart[indexProduct].count;
+    if(type === "minus"){
+        if(count === 1) return 0;
+        count --;
+        logind.dataUser.cart[indexProduct].count = count;
+        usersInfo[indexUser].cart = logind.dataUser.cart;
+    }else{
+        count ++;
+        logind.dataUser.cart[indexProduct].count = count;
+        usersInfo[indexUser].cart = logind.dataUser.cart;
+    }
+
+    localStorage.setItem("logind", JSON.stringify(logind));
+    localStorage.setItem("usersInfo", JSON.stringify(usersInfo));
+    window.location.reload();
+}
 
 if(!logind.status || logind.dataUser.cart.length === 0) {
     cartContentEl.innerHTML = `
@@ -31,10 +60,8 @@ if(!logind.status || logind.dataUser.cart.length === 0) {
 
 }else{
     let priceTotalProduct = null;
-
     let htmlProduct = ``;
     let htmlContent = ``;
-    let dataCarts = logind.dataUser.cart;
     htmlProduct = dataCarts.map((el) => {
         priceTotalProduct += ((el.price - (el.price/100 * el.discount_precent)) * el.count);
         return `
@@ -66,7 +93,9 @@ if(!logind.status || logind.dataUser.cart.length === 0) {
                     <div class="number-product-cart" >
                         <div class="product-view-quantity-box" >
                             <div class="product-view-quantity-box-block" >
+                                 <i class="fa-solid fa-minus" onclick = "changeQuantity('minus',${el.product_id})"></i>
                                 <span class="product-count">${el.count}</span>
+                                <i class="fa-solid fa-plus" onclick = "changeQuantity('plus',${el.product_id})"></i>
                             </div>
                         </div>
                         <div></div>
@@ -138,8 +167,8 @@ if(!logind.status || logind.dataUser.cart.length === 0) {
         cartContentEl.innerHTML = htmlContent
 }
 
+//  Xử lí xóa sản phẩm trong giỏ hàng
 const removeCartEl = $$$(".div-of-btn-remove-cart");
-
 const remove = (id) => {
     
     const logind = JSON.parse(localStorage.getItem("logind"))
@@ -166,3 +195,4 @@ removeCartEl.forEach((el) => {
         window.location.reload()
     })
 })
+

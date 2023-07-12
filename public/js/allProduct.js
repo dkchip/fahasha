@@ -1,5 +1,5 @@
 
-function test(elm,a,b){
+function filterPrice(elm,a,b){
     const ListEl = document.querySelectorAll(".row-option input");
     const url = new URL(window.location.href);
     url.searchParams.set('price',a + ',' + b);

@@ -1,7 +1,7 @@
 import dataProductAll from "./data/dataProductAll.js";
 import { dataTextbooks } from "./data/books.js";
 import { dataForeignBooks } from "./data/books.js";
-import { dataBackpacks } from "./data/backpacks.js"; 
+import { dataBackpacks, dataSupplies } from "./data/backpacks.js"; 
 import { dataToys } from "./data/toys.js";
 
 const $$ = (el) => {
@@ -15,7 +15,7 @@ const $$$ = (el) => {
   
 
 
-// Get Element 
+// Lấy thẻ HTMl
 
 const listProductEl = $$('.list-product');
 const ListEl = $$$(".row-option input");
@@ -24,6 +24,8 @@ const spanEl = $$(".content>span");
 const url = new URL(window.location.href);
 let type = url.searchParams.get("type")
 let search = url.searchParams.get("search")
+
+// Render sản phẩm trong trang danh mục sản phẩm
 
 const renderProduct = (param,type,search) => {
     let html = '';
@@ -44,7 +46,11 @@ const renderProduct = (param,type,search) => {
             tempData = dataToys;
             break;
         case "dungcu":
-            tempData = dataBackpacks;
+           
+            tempData =  dataBackpacks.concat(dataSupplies)
+            .map(value => ({ value, sort: Math.random() }))
+            .sort((a, b) => a.sort - b.sort)
+            .map(({ value }) => value);
             break;
         default :
             tempData = dataProductAll;
@@ -97,7 +103,7 @@ const renderProduct = (param,type,search) => {
 
 renderProduct(null,type,search);
 
-
+// Lọc giá sản phẩm
 
 ListEl.forEach((el) => {
     el.addEventListener("click",() => {

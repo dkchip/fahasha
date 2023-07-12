@@ -15,7 +15,7 @@ if(logind){
 }
 
   
-// Get El
+// Lấy thẻ HTML
 const btnSubmit = $$(".btnsubmit");
 const inputEmail = $$(".input-email")
 const inputPassword = $$(".input-password")
@@ -44,7 +44,7 @@ const toastMessage = (message,duration = 1000) => {
 }
 
 
-
+// Xử lí đăng nhập
 const handleLogin = (email,password) => {
   let dataUsers = JSON.parse(localStorage.getItem('accounts'));
   let usersInfo = JSON.parse(localStorage.getItem('usersInfo'));
@@ -95,7 +95,7 @@ const handleLogin = (email,password) => {
     },1200)
   }
 }
-
+// Hàm kiểm tra email
 function ValidateEmail(mail) 
 {
  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
@@ -104,6 +104,8 @@ function ValidateEmail(mail)
   }
     return (false)
 }
+
+// Xử lí đăng nhập
 
 btnSubmit.addEventListener("click",() => {
   const valueEmail = $$(".input-email").value;
@@ -135,6 +137,8 @@ inputEl.forEach((el) => {
     }
   })
 })
+
+// Xóa err
 
 inputEl.forEach((el) => {
   el.addEventListener("click", () => {

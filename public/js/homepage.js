@@ -1,6 +1,6 @@
 import { dataCategory } from "./data/category.js";
 import { dataTextbooks,dataForeignBooks } from "./data/books.js";
-import {dataBackpacks} from "./data/backpacks.js"
+import {dataBackpacks,dataSupplies} from "./data/backpacks.js"
 import { dataToys } from "./data/toys.js";
 
 const $$ = (el) => {
@@ -12,16 +12,20 @@ const $$$ = (el) => {
 };
 
 
-// Get element HTML
+// Lấy thẻ HTML
 const categogyEl = $$(".category-product-list");
 const textbookMenuListEl = $$$(".textbook-menu-item");
 const backpackMenuListEl = $$$(".backpack-menu-item");
 const toyMenuListEl = $$$(".toy-menu-item");
+
 const foreignMenuListEl = $$$(".foreign-menu-item");
 const forgeinProductEl = $$(".foreign-product-list");
 
+const applianceMenuListEl = $$$(".appliance-menu-item");
+const applianceProductEl = $$(".appliance-product-list");
 
-// Render element
+
+// Render sản phẩm
 const renderProductItem = (datas) => {
   let htmlProduct = "";
   htmlProduct = datas.slice(0,6).map((el) => {
@@ -53,6 +57,7 @@ const renderProductItem = (datas) => {
   return htmlProduct;
 }
 
+// Render sản phẩm Combo
 const renderCategoryTabItem = (datas) => {
   let htmlProduct = "";
   for(var i = 0; i < datas.length; i += 2) {
@@ -82,7 +87,7 @@ const renderCategoryTabItem = (datas) => {
 }
 
 
-// Render category
+// Render danh mục sản phẩm homepage
 let html = "";
 html = dataCategory.map((el, index) => {
   return `
@@ -99,7 +104,7 @@ if(categogyEl){
 
 }
 
-// Handle active menu textbook
+// xử lí active sách trong nước
 
 textbookMenuListEl.forEach((el) => {
   el.addEventListener("click", () => {
@@ -113,7 +118,7 @@ textbookMenuListEl.forEach((el) => {
   });
 });
 
-// Render textbook products
+// Render sản phẩm sách trong nước
 const renderTextbook = (id) => {
     const textbookProductList = $$(".textbook-product-list");
     let htmlProduct = "";
@@ -156,7 +161,7 @@ const renderTextbook = (id) => {
 renderTextbook("0");
 
 
-// Handle Active Menu Backpack
+// Xử lí active menu balo
 backpackMenuListEl.forEach((el) => {
     el.addEventListener("click", () => {
       const id = el.getAttribute("id");
@@ -169,7 +174,7 @@ backpackMenuListEl.forEach((el) => {
     });
   });
 
-// Render backpack products
+// Render sản phẩm balo
 const renderBackpack = (id) => {
     const backpackProductList = $$(".backpack-product-list");
 
@@ -199,7 +204,7 @@ renderBackpack("0");
 
 
 
-// Handle Active Menu Toy
+// Xử lí active menu đồ chơi
 toyMenuListEl.forEach((el) => {
   el.addEventListener("click", () => {
     const id = el.getAttribute("id");
@@ -212,7 +217,7 @@ toyMenuListEl.forEach((el) => {
   });
 });
 
-// Render toy products
+// Render sản phẩm đồ chơi
 const renderToys = (id) => {
     const toyProductList = $$(".toy-product-list");
     let htmlProduct = "";
@@ -240,8 +245,8 @@ const renderToys = (id) => {
 renderToys("0");
 
 
+// Xử lí active menu foreign
 
-// Handle Active Menu Toy
 foreignMenuListEl.forEach((el) => {
   el.addEventListener("click", () => {
     const id = el.getAttribute("id");
@@ -254,9 +259,8 @@ foreignMenuListEl.forEach((el) => {
   });
 });
 
-// Render toy products
+// Render sản phẩm Foreign
 const renderForeign = (id) => {
-    const toyProductList = $$(".toy-product-list");
     let htmlProduct = "";
     let newDataForeign = [];
     switch(id){
@@ -283,3 +287,44 @@ const renderForeign = (id) => {
     };
 
     renderForeign("foreign-0");
+
+
+// Xử lí active menu foreign
+
+applianceMenuListEl.forEach((el) => {
+el.addEventListener("click", () => {
+  const id = el.getAttribute("id");
+  renderAppliance(id)
+
+  var current = $$(".appliance-menu-item.active");
+  current.classList.remove("active");
+
+  el.classList.add("active");
+});
+});
+
+// Render sản phẩm dụng cụ
+const renderAppliance = (id) => {
+
+  let htmlProduct = "";
+  let newDataAppliance = [];
+  switch(id){
+    case "appliance-0" :
+      newDataAppliance = dataSupplies
+    
+        break;
+    case "appliance-1" :
+      newDataAppliance = dataSupplies.filter((el) => {
+        if(el.pen){
+          return el;
+        }
+      });
+        break;
+  
+  }
+
+  htmlProduct = renderCategoryTabItem(newDataAppliance.slice(0,4))
+  applianceProductEl.innerHTML = htmlProduct;
+  };
+
+  renderAppliance("appliance-0");
